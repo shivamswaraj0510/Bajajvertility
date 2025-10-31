@@ -1,12 +1,9 @@
 import "./styles/style.scss";
-
+import VitalityLogo from "../../assets/VitalityLogo.png";
 const Header = () => (
   <header className="header">
     <div className="header-logo">
-      <img
-        src="https://www.parkhospital.in/public/images/icon/park-hospital-logo.webp"
-        alt="bajaj vitality"
-      />
+      <img src={VitalityLogo} alt="bajaj vitality" />
     </div>
     <div className="header-menu">
       <ul className="sub-menu">
@@ -415,7 +412,7 @@ const Header = () => (
 
                 <div className="colWidth ">
                   <h4 className="orange">Multi Specialities</h4>
-                  <div >
+                  <div>
                     <ul>
                       <li>
                         <a href="#">ENT</a>

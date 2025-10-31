@@ -149,7 +149,7 @@ function CardCarousel({
             width: "20px",
             height: "20px",
             marginRight: "4px",
-          }}
+          }} 
         />
       );
     }
