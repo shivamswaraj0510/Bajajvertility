@@ -1,10 +1,14 @@
 .header {
     z-index: 1000;
     height: 124px;
+    width: 100dvw;
     background-color: rgb(255, 255, 255);
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: fixed;
+    top: 0;
+    padding-inline: 15px;
 
     .header-logo {
         width: 300px;
@@ -66,11 +70,12 @@
             }
 
             .emergency-Dropdown {
+                z-index: 9;
                 position: relative;
                 padding: 5px;
-                border-radius:10px ;
-                
-                border:1px solid rgb(255, 68, 0);
+                border-radius: 10px;
+                border: 1px solid rgb(255, 68, 0);
+
                 a {
                     div {
                         width: 140px;
@@ -113,11 +118,12 @@
             .ambulanceDropdownMenu {
                 background-color: #f5f5f5;
                 visibility: hidden;
+                z-index: 9;
                 position: absolute;
                 top: 40px;
-                right: 0px;
-                width: 255px;
-                padding: 40px;
+                right: 1px;
+                width: 280px;
+                padding: 22px;
                 list-style: none;
                 border: 2px solid black;
                 transition: visibility 0.5s ease-in-out;
@@ -169,6 +175,7 @@
                 }
 
                 .single-column-menu {
+                    background-color: #f5f5f5;
                     max-height: 480px;
                     position: absolute;
                     min-width: 150px;

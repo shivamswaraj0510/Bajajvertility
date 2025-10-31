@@ -1,174 +1,56 @@
 .hpcarousel-container {
     font-family: var(--frubikont-);
+    --hp-top-offset: 124px;
     width: 100vw;
     box-sizing: border-box;
+    padding-top: var(--hp-top-offset);
 
     .hpcarousel-bg {
         width: 100%;
-        height: calc(100vh - var(--hp-bottom-offset) - var(--hp-top-offset));
         position: relative;
         overflow: hidden;
 
         .hpcarousel-video,
         .hpcarousel-image {
             width: 100%;
-            height: auto;
             aspect-ratio: 1200/500;
             object-fit: cover;
             object-position: center;
         }
 
-        .hpcarousel-text {
-
-            width: 679px;
-            display: flex;
-            flex-direction: column;
-            gap: 40px;
-            color: #FFFFFF;
-            font-family: var(--frubikont-);
-
-            .hptext {
-                display: flex;
-                flex-direction: column;
-                gap: 12px;
-
-                .hpmain-text {
-                    font-weight: 500;
-                    font-style: Medium;
-                    font-size: 52px;
-                    line-height: 58px;
-                    letter-spacing: 0px;
-                }
-
-                .hpsub-text {
-                    font-weight: 300;
-                    font-style: Light;
-                    font-size: 22px;
-                    line-height: 26px;
-                    letter-spacing: 0px;
-                }
-            }
-
-            .hpcta-btn {
-                font-family: var(--frubikont-);
-                z-index: 9;
-                text-decoration: none;
-                text-align: center;
-                width: 181px;
-                height: 20px;
-                border-radius: 8px;
-                padding: 8px 16px;
-                background-color: #FFFFFF;
-                font-weight: 400;
-                font-size: 16px;
-                line-height: 20px;
-                color: #002953;
-            }
-
-            .hpcta-btn:hover {
-                cursor: pointer;
-            }
-        }
-
-        .hpcarousel-text-left-top {
-            position: absolute;
-            top: 60px;
-            left: 60px;
-        }
-
-        .hpcarousel-text-left-bottom {
-            width: 581px;
-            position: absolute;
-            bottom: 160px;
-            left: 60px;
-
-            .hptext {
-                display: flex;
-                flex-direction: column;
-                gap: 12px;
-
-                .hpmain-text {
-                    font-weight: 500;
-                    font-style: Medium;
-                    font-size: 40px;
-                    line-height: 44px;
-                    letter-spacing: 0px;
-                }
-
-                .hpsub-text {
-                    font-weight: 300;
-                    font-style: Light;
-                    font-size: 20px;
-                    line-height: 26px;
-                    letter-spacing: 0px;
-                }
-            }
-        }
-
-        .hpcarousel-text-right-bottom {
-            width: 581px;
-            position: absolute;
-            right: 60px;
-            bottom: 160px;
-
-            .hptext {
-                display: flex;
-                flex-direction: column;
-                gap: 12px;
-
-                .hpmain-text {
-                    font-weight: 500;
-                    font-style: Medium;
-                    font-size: 40px;
-                    line-height: 44px;
-                    letter-spacing: 0px;
-                }
-
-                .hpsub-text {
-                    font-weight: 300;
-                    font-style: Light;
-                    font-size: 20px;
-                    line-height: 26px;
-                    letter-spacing: 0px;
-                }
-            }
-        }
-
-        .hpcarousel-text-right-top {
-            position: absolute;
-            top: 60px;
-            right: 60px;
-        }
-
         .hp-background-children {
-            width: 100%;
+            width: 10%;
+            height: 100%;
             position: absolute;
-            bottom: 0;
+            top: 0;
+            right: 0;
 
             .hpcarousel-controls {
                 width: 100%;
-                position: relative;
-                height: 140px;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
                 overflow: hidden;
 
                 .hpcarousel-button-list {
-                    position: absolute;
-                    bottom: 12px;
                     width: -webkit-fill-available;
                     display: flex;
                     align-items: center;
-                    justify-content: space-between;
-                    gap: 268px;
-                    padding-left: 60px;
-                    padding-right: 60px;
+                    justify-content: center;
+                    flex-direction: column;
+                    gap: 22px;
 
                     >div {
+                        width: 25px;
+                        height: 25px;
+                        background-color: #ce9090f2;
+                        border-radius: 50%;
                         cursor: pointer;
                         display: flex;
                         flex-direction: column;
                         align-items: center;
                         justify-content: center;
-                        gap: 8px;
 
                         >button {
                             cursor: pointer;
@@ -182,309 +64,14 @@
                         }
 
                     }
+
+                    .active {
+                        background-color: orangered;
+                    }
                 }
             }
         }
     }
 
-    .CR-1 {
-        background: transparent;
-        min-height: 52px;
-        width: -webkit-fill-available;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        background-color: #0d2640;
-        color: #FFFFFF;
-        cursor: pointer;
-        transition: opacity 0.3s ease;
-        text-align: center;
-        font-weight: 400;
-        font-size: 22px;
-        line-height: 28px;
-        letter-spacing: 0px;
-        text-align: center;
-        vertical-align: middle;
-    }
 }
 
-@media (min-width: 740px) and (max-width: 1279px) {
-    .hpcarousel-container {
-        width: 100vw;
-
-        .hpcarousel-bg {
-            .hp-background-children {
-                .hpcarousel-controls {
-                    height: 100px;
-                    overflow: visible;
-
-                    .wave-image {
-                        position: absolute;
-                        bottom: 0px;
-                    }
-
-                    .hpcarousel-button-list {
-                        gap: 115px;
-
-                        >div>button {
-                            font-size: 12px;
-                        }
-                    }
-                }
-            }
-
-
-            .hpcarousel-text {
-                width: 516px;
-                display: flex;
-                flex-direction: column;
-                gap: 40px;
-                color: #FFFFFF;
-                font-family: var(--frubikont-);
-                justify-content: center;
-
-                .hptext {
-                    display: flex;
-                    flex-direction: column;
-                    gap: 16px;
-
-                    .hpmain-text {
-                        font-weight: 500;
-                        font-style: Medium;
-                        font-size: 40px;
-                        line-height: 44px;
-                        letter-spacing: 0px;
-                    }
-
-                    .hpsub-text {
-                        font-weight: 400;
-                        font-style: Light;
-                        font-size: 20px;
-                        line-height: 24px;
-                        letter-spacing: 0px;
-                    }
-                }
-
-                .hpcta-btn {
-                    font-family: var(--frubikont-);
-                    z-index: 9;
-                    text-decoration: none;
-                    text-align: center;
-                    width: 181px;
-                    height: 20px;
-                    border-radius: 8px;
-                    padding: 8px 16px;
-                    background-color: #FFFFFF;
-                    font-weight: 400;
-                    font-size: 14px;
-                    line-height: 18px;
-                    color: #002953;
-                }
-
-                .hpcta-btn:hover {
-                    cursor: pointer;
-                }
-            }
-
-            .hpcarousel-text-left-top {
-                position: absolute;
-                top: 60px;
-                left: 60px;
-            }
-
-            .hpcarousel-text-left-bottom {
-                position: absolute;
-                bottom: 208px;
-                left: 50%;
-                transform: translateX(-50%);
-                height: fit-content;
-                text-align: center;
-            }
-
-            .hpcarousel-text-right-bottom {
-                position: absolute;
-                bottom: 208px;
-                left: 50%;
-                transform: translateX(-50%);
-                height: fit-content;
-                text-align: center;
-            }
-
-            .hpcarousel-text-right-top {
-                position: absolute;
-                top: 60px;
-                right: 60px;
-            }
-        }
-
-        .CR-1 {
-            padding-inline: 16px;
-            background: transparent;
-            min-height: 52px;
-            width: -webkit-fill-available;
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-            background-color: #0d2640;
-            color: #FFFFFF;
-            cursor: pointer;
-            transition: opacity 0.3s ease;
-            text-align: center;
-            font-weight: 400;
-            font-size: 20px;
-            line-height: 24px;
-            letter-spacing: 0px;
-        }
-    }
-}
-
-@media (max-width: 739px) {
-    .hpcarousel-container {
-        width: 100vw;
-        background-color: #f2f2f2f2;
-
-        .hpcarousel-bg {
-            height: calc(92vh - var(--hp-bottom-offset) - var(--hp-top-offset));
-
-            .hp-background-children {
-                .hpcarousel-controls {
-                    height: 67px;
-                    overflow: visible;
-
-                    .wave-image {
-                        position: absolute;
-                        bottom: 15px;
-                    }
-
-                    .hpcarousel-button-list {
-                        overflow: scroll;
-                        box-sizing: border-box;
-                        width: 100%;
-                        bottom: 8px;
-                        gap: 80px;
-                        scrollbar-width: none;
-                        -ms-overflow-style: none;
-                        padding-left: 16px;
-                        padding-right: 16px;
-
-                        >div {
-
-                            >button {
-                                width: max-content;
-                                font-weight: 400;
-                                font-size: 12px;
-                                line-height: 18px;
-                                letter-spacing: 0.2px;
-                            }
-                        }
-                    }
-                }
-            }
-
-            .hpcarousel-text {
-                width: 304px;
-                display: flex;
-                flex-direction: column;
-                gap: 32px;
-                color: #FFFFFF;
-                font-family: var(--frubikont-);
-                justify-content: center;
-
-                .hptext {
-                    display: flex;
-                    flex-direction: column;
-                    gap: 8px;
-                    width: 328px;
-
-                    .hpmain-text {
-                        font-weight: 500;
-                        font-style: Medium;
-                        font-size: 22px;
-                        line-height: 26px;
-                        letter-spacing: 0px;
-                    }
-
-                    .hpsub-text {
-                        font-weight: 400;
-                        font-style: Light;
-                        font-size: 14px;
-                        line-height: 18px;
-                        letter-spacing: 0px;
-                    }
-                }
-
-                .hpcta-btn {
-                    width: 130px !important;
-                    font-family: var(--frubikont-);
-                    z-index: 9;
-                    text-decoration: none;
-                    text-align: center;
-                    height: 18px;
-                    border-radius: 8px;
-                    padding: 8px 16px;
-                    background-color: #FFFFFF;
-                    font-weight: 400;
-                    font-size: 14px;
-                    line-height: 18px;
-                    color: #002953;
-                }
-
-                .hpcta-btn:hover {
-                    cursor: pointer;
-                }
-            }
-
-            .hpcarousel-text-left-top {
-                position: absolute;
-                top: 32px;
-                left: 16px;
-            }
-
-            .hpcarousel-text-left-bottom {
-                position: absolute;
-                bottom: 108px;
-                left: 50%;
-                transform: translateX(-50%);
-                height: fit-content;
-                text-align: center;
-            }
-
-            .hpcarousel-text-right-bottom {
-                position: absolute;
-                bottom: 108px;
-                left: 50%;
-                transform: translateX(-50%);
-                height: fit-content;
-                text-align: center;
-            }
-
-            .hpcarousel-text-right-top {
-                position: absolute;
-                top: 32px;
-                right: 16px;
-            }
-        }
-
-        .CR-1 {
-            padding-inline: 16px;
-            background: transparent;
-            min-height: 52px;
-            width: -webkit-fill-available;
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-            background-color: #0d2640;
-            color: #FFFFFF;
-            cursor: pointer;
-            transition: opacity 0.3s ease;
-            font-weight: 400;
-            font-size: 16px;
-            line-height: 22px;
-            letter-spacing: 0px;
-            text-align: center;
-        }
-    }
-}

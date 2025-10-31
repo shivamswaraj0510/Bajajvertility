@@ -1,14 +1,15 @@
-// import { useState } from "react";
-// import "./App.css";
 import Header from "./components/Header/Header";
+import ExcCardCarousel from "./components/HomepageBanner copy/ExcCardCarousel";
+import CardCarousel from "./components/HomepageBanner/cardCarousel";
 import Hpcarousel from "./components/hpcarousel/hpcarousel";
 
 function App() {
-  // const [count, setCount] = useState(0);
   return (
     <>
       <Header />
       <Hpcarousel />
+      <CardCarousel />
+      <ExcCardCarousel />
     </>
   );
 }
