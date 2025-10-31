@@ -31,7 +31,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-
+        gap: 10px;
         .sub-menu {
             margin: 0;
             padding: 0;
@@ -44,6 +44,7 @@
             align-items: center;
             list-style: none;
             border-bottom: #000000 1px solid;
+            overflow: visible;
 
             .tabNone {
                 padding-inline: 5px;
@@ -65,6 +66,7 @@
                         display: flex;
                         align-items: center;
                         justify-content: center;
+                        font-size: small;
                     }
                 }
             }

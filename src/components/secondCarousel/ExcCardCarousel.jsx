@@ -8,7 +8,7 @@ function ExcCardCarousel({
       title: "Cozy Apartment",
       subtitle: "2 BHK in downtown",
       image:
-        "https://www.parkhospital.in/storage/app/public/images/about/A9PkLLeksZUeeKhvWuOe23dnGvjNeBT6P53lFcEW.webp",
+        "https://parkhospital.in/storage/app/public/upload/q76GLWhTiIObZq1JPkuQOZvC5apzXkRrLZG6xr2l.webp",
       renaking: 4,
       description: "Bright apartment with city views and modern kitchen.",
     },
@@ -17,7 +17,7 @@ function ExcCardCarousel({
       title: "Modern Loft",
       subtitle: "Open plan living",
       image:
-        "https://www.parkhospital.in/storage/app/public/images/about/A9PkLLeksZUeeKhvWuOe23dnGvjNeBT6P53lFcEW.webp",
+        "https://parkhospital.in/storage/app/public/upload/q76GLWhTiIObZq1JPkuQOZvC5apzXkRrLZG6xr2l.webp",
       renaking: 4,
       description: "Loft with high ceilings and lots of natural light.",
     },
@@ -26,7 +26,7 @@ function ExcCardCarousel({
       title: "Penthouse Suite",
       subtitle: "Skyline view",
       image:
-        "https://www.parkhospital.in/storage/app/public/images/about/A9PkLLeksZUeeKhvWuOe23dnGvjNeBT6P53lFcEW.webp",
+        "https://parkhospital.in/storage/app/public/upload/q76GLWhTiIObZq1JPkuQOZvC5apzXkRrLZG6xr2l.webp",
       description: "Luxurious top-floor suite with private terrace.",
       renaking: 4,
     },
@@ -35,7 +35,7 @@ function ExcCardCarousel({
       title: "Garden House",
       subtitle: "Private backyard",
       image:
-        "https://www.parkhospital.in/storage/app/public/images/about/A9PkLLeksZUeeKhvWuOe23dnGvjNeBT6P53lFcEW.webp",
+        "https://parkhospital.in/storage/app/public/upload/q76GLWhTiIObZq1JPkuQOZvC5apzXkRrLZG6xr2l.webp",
       description: "Charming house with a large private garden.",
       renaking: 4,
     },
@@ -44,7 +44,7 @@ function ExcCardCarousel({
       title: "Studio Flat",
       subtitle: "Compact & smart",
       image:
-        "https://www.parkhospital.in/storage/app/public/images/about/A9PkLLeksZUeeKhvWuOe23dnGvjNeBT6P53lFcEW.webp",
+        "https://parkhospital.in/storage/app/public/upload/q76GLWhTiIObZq1JPkuQOZvC5apzXkRrLZG6xr2l.webp",
       renaking: 4,
       description: "Perfect starter studio with efficient layout.",
     },
@@ -53,7 +53,7 @@ function ExcCardCarousel({
       title: "Beach Villa",
       subtitle: "Steps from the sand",
       image:
-        "https://www.parkhospital.in/storage/app/public/images/about/A9PkLLeksZUeeKhvWuOe23dnGvjNeBT6P53lFcEW.webp",
+        "https://parkhospital.in/storage/app/public/upload/q76GLWhTiIObZq1JPkuQOZvC5apzXkRrLZG6xr2l.webp",
       description: "Wake up to ocean views in this spacious villa.",
       renaking: 4,
     },
@@ -62,7 +62,7 @@ function ExcCardCarousel({
       title: "Country Cottage",
       subtitle: "Peaceful retreat",
       image:
-        "https://www.parkhospital.in/storage/app/public/images/about/A9PkLLeksZUeeKhvWuOe23dnGvjNeBT6P53lFcEW.webp",
+        "https://parkhospital.in/storage/app/public/upload/q76GLWhTiIObZq1JPkuQOZvC5apzXkRrLZG6xr2l.webp",
       description: "Cozy cottage surrounded by rolling hills.",
       renaking: 4,
     },
@@ -71,7 +71,7 @@ function ExcCardCarousel({
       title: "City Condo",
       subtitle: "Convenient location",
       image:
-        "https://www.parkhospital.in/storage/app/public/images/about/A9PkLLeksZUeeKhvWuOe23dnGvjNeBT6P53lFcEW.webp",
+        "https://parkhospital.in/storage/app/public/upload/q76GLWhTiIObZq1JPkuQOZvC5apzXkRrLZG6xr2l.webp",
       description: "Condo close to transport, shops and cafes.",
       renaking: 4,
     },
@@ -80,7 +80,7 @@ function ExcCardCarousel({
       title: "Suburban Home",
       subtitle: "Family-friendly",
       image:
-        "https://www.parkhospital.in/storage/app/public/images/about/A9PkLLeksZUeeKhvWuOe23dnGvjNeBT6P53lFcEW.webp",
+        "https://parkhospital.in/storage/app/public/upload/q76GLWhTiIObZq1JPkuQOZvC5apzXkRrLZG6xr2l.webp",
       description: "Four-bedroom home in a quiet neighborhood.",
       renaking: 4,
     },
@@ -89,16 +89,16 @@ function ExcCardCarousel({
       title: "Riverside Cabin",
       subtitle: "Nature escape",
       image:
-        "https://www.parkhospital.in/storage/app/public/images/about/A9PkLLeksZUeeKhvWuOe23dnGvjNeBT6P53lFcEW.webp",
+        "https://parkhospital.in/storage/app/public/upload/q76GLWhTiIObZq1JPkuQOZvC5apzXkRrLZG6xr2l.webp",
       description: "Rustic cabin on the river, great for weekends.",
       renaking: 4,
     },
     {
       id: 11,
       title: "Designer Flat",
-      subtitle: "High-end finishes",
+      subtitle: "Designer interiors with premium fixtures.",
       image:
-        "https://www.parkhospital.in/storage/app/public/images/about/A9PkLLeksZUeeKhvWuOe23dnGvjNeBT6P53lFcEW.webp",
+        "https://parkhospital.in/storage/app/public/upload/q76GLWhTiIObZq1JPkuQOZvC5apzXkRrLZG6xr2l.webp",
       description: "Designer interiors with premium fixtures.",
       renaking: 3,
     },
@@ -106,7 +106,7 @@ function ExcCardCarousel({
       id: 12,
       subtitle: "Ski access",
       image:
-        "https://www.parkhospital.in/storage/app/public/images/about/A9PkLLeksZUeeKhvWuOe23dnGvjNeBT6P53lFcEW.webp",
+        "https://parkhospital.in/storage/app/public/upload/q76GLWhTiIObZq1JPkuQOZvC5apzXkRrLZG6xr2l.webp",
       renaking: 4,
     },
   ],
@@ -129,33 +129,6 @@ function ExcCardCarousel({
 
   const prev = () => setStart((s) => (s - pageSize + total) % total);
   const next = () => setStart((s) => (s + pageSize) % total);
-
-  const renderStars = (rating) => {
-    const stars = [];
-    const maxStars = 5;
-    const filledStars = Math.min(Math.max(0, rating || 0), maxStars);
-
-    for (let i = 0; i < maxStars; i++) {
-      stars.push(
-        <img
-          key={i}
-          src={star}
-          alt="star"
-          className={`star-icon ${
-            i < filledStars ? "star-filled" : "star-empty"
-          }`}
-          style={{
-            opacity: i < filledStars ? 1 : 0.3,
-            width: "20px",
-            height: "20px",
-            marginRight: "4px",
-          }}
-        />
-      );
-    }
-    return stars;
-  };
-
   return (
     <div className="exccardCarousel-container">
       <button
@@ -168,10 +141,7 @@ function ExcCardCarousel({
       </button>
 
       <div className="cardCarousel-viewport">
-        <div
-          className="cardCarousel-track"
-          style={{ display: "flex", gap: 12 }}
-        >
+        <div className="cardCarousel-track">
           {visibleItems.map((item, idx) => (
             <div
               key={item?.id ?? item?._id ?? `${start}-${idx}`}
@@ -180,49 +150,19 @@ function ExcCardCarousel({
               aria-roledescription="slide"
             >
               {item?.image || item?.img || item?.thumbnail ? (
-                <img
-                  src={item.image || item.img || item.thumbnail}
-                  alt={item?.title || item?.name || "card image"}
-                  className="card-image"
-                />
+                <div className="img">
+                  <img
+                    src={item.image || item.img || item.thumbnail}
+                    alt={item?.title || item?.name || "card image"}
+                    className="card-image"
+                  />
+                </div>
               ) : null}
 
               <div className="card-body">
                 {item?.subtitle ? (
                   <p className="card-sub">{item.subtitle}</p>
                 ) : null}
-
-                {item?.renaking ? (
-                  <div
-                    className="rating-container"
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      gap: "8px",
-                      marginTop: "8px",
-                    }}
-                  >
-                    <div className="stars-wrapper">
-                      {renderStars(item.renaking)}
-                    </div>
-                    <span
-                      className="rating-number"
-                      style={{
-                        fontSize: "14px",
-                        fontWeight: "500",
-                        color: "#666",
-                      }}
-                    >
-                      {item.renaking}/5
-                    </span>
-                  </div>
-                ) : null}
-
-                {!item?.title && !item?.subtitle && !item?.image && (
-                  <pre className="card-json" style={{ whiteSpace: "pre-wrap" }}>
-                    {JSON.stringify(item, null, 2)}
-                  </pre>
-                )}
               </div>
             </div>
           ))}

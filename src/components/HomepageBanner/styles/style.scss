@@ -1,5 +1,6 @@
-.exccardCarousel-container {
+.cardCarousel-container {
     padding-top: 20px;
+    padding-bottom: 20px;
     width: 100%;
     height: auto;
     display: flex;
@@ -17,26 +18,17 @@
             width: 100%;
             display: flex;
             align-items: center;
-            justify-content: center;
+            justify-content: space-around;
+
 
             .cardCarousel-item {
                 width: 210px;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                gap: 20px;
-                background: transparent;
-                border-left: 1px solid gray;
-                border-right: 1px solid gray;
 
                 .card-image {
                     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.546);
-                    width: 140px;
-                    height: 140px;
+                    width: 100%;
+                    height: 150px;
                     object-fit: cover;
-                    border-radius: 50%;
-
                 }
             }
         }
@@ -44,8 +36,7 @@
 
     .cardCarousel-btn {
         background-color: transparent;
-        border-radius: 50%;
-        border: 1px solid black;
+        border: none;
         font-size: 30px;
         cursor: pointer;
         width: 25px;
