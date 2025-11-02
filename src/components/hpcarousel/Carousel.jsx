@@ -1,5 +1,3 @@
-import React from "react";
-
 function Carousel({ items, active, onChange }) {
   const total = items.length;
   if (total === 0) return null;
@@ -8,7 +6,11 @@ function Carousel({ items, active, onChange }) {
     <div className="hpcarousel-controls" aria-label="Carousel items">
       <div className="hpcarousel-button-list" role="tablist">
         {items.map((it, idx) => (
-          <div key={it._id}>
+          <div
+            key={`${it._id ?? "item"}-${idx}`}
+            className={idx == active ? "active" : ""}
+            onClick={() => onChange(idx)}
+          >
             <button
               role="tab"
               aria-selected={idx === active}
@@ -16,10 +18,7 @@ function Carousel({ items, active, onChange }) {
               className={`hpcarousel-button ${
                 idx === active ? "is-active" : ""
               }`}
-              onClick={() => onChange(idx)}
-            >
-              {`Item ${idx + 1}`}
-            </button>
+            ></button>
           </div>
         ))}
       </div>

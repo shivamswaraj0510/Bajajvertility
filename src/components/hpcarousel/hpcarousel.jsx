@@ -1,10 +1,10 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import "./style/style.scss";
 import Background from "./Background";
 import Carousel from "./Carousel";
 
-const query = `*[_type == "hpcarousel"] | order(order asc) {
+const _query = `*[_type == "hpcarousel"] | order(order asc) {
   _id,
   title,
   order,
@@ -27,7 +27,7 @@ const query = `*[_type == "hpcarousel"] | order(order asc) {
 }`;
 
 function Hpcarousel() {
-  const [data, setData] = useState([
+  const [data, _setData] = useState([
     {
       _id: "default",
       order: 1,
@@ -45,7 +45,8 @@ function Hpcarousel() {
       _id: "default",
       order: 3,
       kind: "image",
-      desktopUrl: "https://d1rq68njgylyqg.cloudfront.net/banner/ParkGroupWebBanner3.webp",
+      desktopUrl:
+        "https://d1rq68njgylyqg.cloudfront.net/banner/ParkGroupWebBanner3.webp",
     },
     {
       _id: "default",
@@ -72,13 +73,35 @@ function Hpcarousel() {
     setAutoAdvanceEnabled(false);
   }
 
-  function handleProgressComplete() {
+  const handleProgressComplete = useCallback(() => {
     if (!autoAdvanceEnabled) return;
     setActive((prev) => {
       if (data.length === 0) return prev;
       return (prev + 1) % data.length;
     });
-  }
+  }, [autoAdvanceEnabled, data.length]);
+
+  // Auto-advance for non-video (image) slides using a timer.
+  // Videos will call onVideoEnded from Background which triggers handleProgressComplete.
+  useEffect(() => {
+    if (!autoAdvanceEnabled) return;
+    if (!data || data.length === 0) return;
+    // Only auto-advance images; videos are advanced when their 'ended' event fires
+    if (hero?.kind === "image") {
+      const timer = setTimeout(() => {
+        handleProgressComplete();
+      }, 5000); // change delay as needed
+      return () => clearTimeout(timer);
+    }
+    return undefined;
+  }, [
+    active,
+    autoAdvanceEnabled,
+    data,
+    data.length,
+    hero?.kind,
+    handleProgressComplete,
+  ]);
 
   return (
     <div className="hpcarousel-container">

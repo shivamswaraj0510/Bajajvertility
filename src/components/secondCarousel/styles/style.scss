@@ -1,0 +1,83 @@
+
+.exccardCarousel-container {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    .cardCarousel-viewport {
+        width: 940px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .cardCarousel-track {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .cardCarousel-item {
+                width: 210px;
+                height: 230px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 20px;
+                background: transparent;
+                border-left: 1px solid gray;
+                border-right: 1px solid gray;
+
+                .img {
+                    width: 140px;
+                    height: 140px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background-image: radial-gradient(circle, #0285c9, #1670b0, #1b5d97, #1b4a7f, #183867);
+                    border-radius: 50%;
+
+                    .card-image {
+                        width: 40px;
+                        height: 40px;
+                        object-fit: cover;
+                    }
+
+
+                }
+
+                .card-body {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    color: grey;
+
+                    >p {
+                        font-size: 12px;
+                        font-weight: 300;
+                        line-height: 16px;
+                        padding: 0 10px;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+
+    .cardCarousel-btn {
+        background-color: transparent;
+        border: none;
+        font-size: 30px;
+        cursor: pointer;
+        width: 25px;
+        height: 24px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
