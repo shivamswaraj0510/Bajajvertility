@@ -12,7 +12,7 @@ const FirstCarousel = () => (
         North India with a network of 13 hospitals to provide healthcare
         services.
       </p>
-      <h3>All Locations</h3>
+      <h3>All Locations</h3> 
     </div>
     <CardCarousel />
   </section>
