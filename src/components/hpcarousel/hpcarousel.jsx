@@ -3,70 +3,32 @@ import { useEffect, useState, useCallback } from "react";
 import "./style/style.scss";
 import Background from "./Background";
 import Carousel from "./Carousel";
+import { client } from "../../lib/sanity";
 
-const _query = `*[_type == "hpcarousel"] | order(order asc) {
+const query = `*[_type == "HpCardCarousel"] | order(order asc){
   _id,
+  kind,
   title,
+  alt,
   order,
-  "kind": uploadType,
-  "desktopUrl": select(
-    uploadType == "video" => videofiledesktop.asset->url,
-    imagedesktop.asset->url
-  ),
-  "tabletUrl": select(
-    uploadType == "video" => coalesce(videofiletabletview.asset->url, videofiledesktop.asset->url),
-    coalesce(imagetabletview.asset->url, imagedesktop.asset->url)
-  ),
-  "hero": select(herotext == "yes" => {
-    "main": maintext,
-    "sub": subtext,
-    "x": herotextpositionx,
-    "y": herotextpositiony
-  }),
-  "cta": select(wantctabtn => {"text": ctabtntext, "url": ctabtnurl})
-}`;
+  "desktopUrl": select(kind == "image" => image.asset->url),
+  "videoUrl": select(kind == "video" => video.asset->url)
+}
+ `;
 
 function Hpcarousel() {
-  const [data, _setData] = useState([
-    {
-      _id: "default",
-      order: 1,
-      kind: "image",
-      desktopUrl:
-        "https://d1rq68njgylyqg.cloudfront.net/banner/ParkGroupWebBanner3.webp",
-    },
-    {
-      _id: "default",
-      order: 2,
-      kind: "video",
-      desktopUrl: "https://d1rq68njgylyqg.cloudfront.net/banner/banner2_v.mp4",
-    },
-    {
-      _id: "default",
-      order: 3,
-      kind: "image",
-      desktopUrl:
-        "https://d1rq68njgylyqg.cloudfront.net/banner/ParkGroupWebBanner3.webp",
-    },
-    {
-      _id: "default",
-      order: 4,
-      kind: "image",
-      desktopUrl:
-        "https://d1rq68njgylyqg.cloudfront.net/banner/ParkGroupWebBanner3.webp",
-    },
-  ]);
+  const [data, setData] = useState([]);
   const [active, setActive] = useState(0);
   const [autoAdvanceEnabled, setAutoAdvanceEnabled] = useState(true);
   const hero = data[active];
 
-  // useEffect(() => {
-  //   async function fetchData() {
-  //     const result = await client.fetch(query);
-  //     setData(() => result || []);
-  //   }
-  //   fetchData();
-  // }, []);
+  useEffect(() => {
+    async function fetchData() {
+      const result = await client.fetch(query);
+      setData(() => result || []);
+    }
+    fetchData();
+  }, []);
   function handleActive(index) {
     setActive(index);
     // user clicked a button -> stop automatic advancing
