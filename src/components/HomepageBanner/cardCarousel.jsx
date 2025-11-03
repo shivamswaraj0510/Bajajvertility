@@ -61,51 +61,75 @@ function CardCarousel({ items = [], visible = 4 }) {
 
       <div className="cardCarousel-viewport">
         <div className="cardCarousel-track">
-          {visibleItems.map((item, idx) => (
-            <div
-              key={item?._id ?? item?._key ?? `${start}-${idx}`}
-              className="cardCarousel-item card"
-              role="group"
-              aria-roledescription="slide"
-            >
-              {item?.imageUrl && (
-                <img
-                  src={item.imageUrl}
-                  alt={item?.alt || "card image"}
-                  className="card-image"
-                />
-              )}
+          {visibleItems.map((item, idx) => {
+            const key =
+              item?.id ?? item?._id ?? item?._key ?? `${start}-${idx}`;
+            // support different image shapes: url string or object with asset.url
+            let imageSrc = null;
+            if (typeof item?.image === "string") imageSrc = item.image;
+            else if (item?.image?.asset?.url) imageSrc = item.image.asset.url;
+            else if (item?.imageUrl) imageSrc = item.imageUrl;
+            else if (item?.img) imageSrc = item.img;
+            else if (item?.thumbnail) imageSrc = item.thumbnail;
 
-              <div className="card-body">
-                {/* Optional rating if provided on items */}
-                {typeof item?.rating === "number" && (
-                  <div
-                    className="rating-container"
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      gap: "8px",
-                      marginTop: "8px",
-                    }}
-                  >
-                    <div className="stars-wrapper">
-                      {renderStars(item.rating)}
-                    </div>
-                    <span
-                      className="rating-number"
+            const altText =
+              item?.alt || item?.subtitle || item?.title || "card image";
+
+            const itemRating =
+              typeof item?.rating === "number"
+                ? item.rating
+                : typeof item?.renaking === "number"
+                ? item.renaking
+                : undefined;
+
+            return (
+              <div
+                key={key}
+                className="cardCarousel-item card"
+                role="group"
+                aria-roledescription="slide"
+              >
+                {imageSrc && (
+                  <img src={imageSrc} alt={altText} className="card-image" />
+                )}
+
+                <div className="card-body">
+                  {item?.title ? (
+                    <h4 className="card-title">{item.title}</h4>
+                  ) : null}
+                  {item?.subtitle ? (
+                    <p className="card-sub">{item.subtitle}</p>
+                  ) : null}
+
+                  {typeof itemRating === "number" && (
+                    <div
+                      className="rating-container"
                       style={{
-                        fontSize: "14px",
-                        fontWeight: "500",
-                        color: "#666",
+                        display: "flex",
+                        alignItems: "center",
+                        gap: "8px",
+                        marginTop: "8px",
                       }}
                     >
-                      {item.rating}/5
-                    </span>
-                  </div>
-                )}
+                      <div className="stars-wrapper">
+                        {renderStars(itemRating)}
+                      </div>
+                      <span
+                        className="rating-number"
+                        style={{
+                          fontSize: "14px",
+                          fontWeight: "500",
+                          color: "#666",
+                        }}
+                      >
+                        {itemRating}/5
+                      </span>
+                    </div>
+                  )}
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
 

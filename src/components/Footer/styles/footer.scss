@@ -1,0 +1,244 @@
+$bg: #000;
+$text: #fff;
+$accent: #00b3ff;
+
+.footer__heading {
+    margin-bottom: 15px;
+}
+.footer__list li {
+    border-top: 1px solid #00abec;
+}
+.footer__list li a {
+    padding: 0 10px 0 15px;
+    margin-top: 2px;
+}
+
+.footer,
+.park-footer {
+    background-color: $bg; 
+    color: $text;
+    padding: 60px 0 20px;
+    font-family: "Rubik", sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+
+    a {
+        color: $text;
+        text-decoration: none;
+        transition: all 0.2s ease-in-out;
+
+        &:hover {
+            color: $accent; // hover blue tone like site
+            text-decoration: underline;
+        }
+    }
+
+    /* container */
+    .footer__container,
+    .ph-container {
+        width: 90%;
+        max-width: 1300px;
+        margin: 0 auto;
+    }
+
+    /* desktop grid wrapper */
+    .footer__grid,
+    .desktopFooter {
+        display: flex;
+        justify-content: space-between;
+        gap: 40px;
+
+        /* column */
+        .footer__col,
+        .ph-col {
+            flex: 1;
+
+            /* inner wrapper (only used in old markup; safe fallback) */
+            .col-inner {
+                display: flex;
+                flex-wrap: wrap;
+
+                &.two-cols {
+                    justify-content: space-between;
+
+                    .col-list {
+                        flex: 1 1 48%;
+                    }
+                }
+
+                &.single-col {
+                    flex-direction: column;
+                }
+            }
+
+            /* lists */
+            .footer__list,
+            .col-list {
+                list-style: none;
+                padding: 0;
+                margin: 0 0 30px;
+
+                /* section heading */
+                .footer__heading,
+                .heading {
+                    color: $accent;
+                    font-size: 16px;
+                    font-weight: 600;
+                    margin-bottom: 20px;
+                    position: relative;
+                    display: inline-block;
+
+                    &::after {
+                        content: "";
+                        display: block;
+                        width: 35px;
+                        height: 2px;
+                        background-color: $accent;
+                        margin-top: 4px;
+                    }
+                }
+
+                li,
+                .footer__item {
+                    margin-bottom: 20px;
+
+                    .footer__link {
+                        // links already styled above via root `a` rule
+                    }
+                }
+            }
+        }
+    }
+
+    /* Mobile footer (kept for parity with previous design)
+     If your JSX doesn’t render a mobile-only wrapper,
+     you can ignore these or repurpose as needed. */
+    .mobileFooter {
+        display: none;
+        text-align: center;
+
+        .mobile-heading {
+            color: $accent;
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .mobile-links {
+            list-style: none;
+            padding: 0;
+            margin: 0 auto;
+            width: 80%;
+
+            li {
+                margin-bottom: 10px;
+
+                a {
+                    color: $text;
+                    font-size: 14px;
+                    text-decoration: none;
+
+                    &:hover {
+                        color: $accent;
+                    }
+                }
+            }
+        }
+    }
+
+    /* Accreditation + Social icons row
+     (Your JSX mentions keeping this area; styles included) */
+    .assets-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding-top: 30px;
+        margin-top: 30px;
+
+        .ftLogo {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+
+            img {
+                height: 50px;
+                width: auto;
+                object-fit: contain;
+            }
+        }
+
+        .followus {
+            display: flex;
+            align-items: center;
+
+            .socialIcons {
+                display: flex;
+                gap: 15px;
+
+                a {
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 36px;
+                    height: 36px;
+                    background-color: rgba(255, 255, 255, 0.08);
+                    border-radius: 50%;
+                    transition: 0.3s;
+
+                    &:hover {
+                        background-color: $accent;
+                    }
+
+                    img {
+                        width: 18px;
+                        height: 18px;
+                        object-fit: contain;
+                    }
+                }
+            }
+        }
+    }
+
+    /* Responsive */
+    @media (max-width: 992px) {
+
+        .footer__grid,
+        .desktopFooter {
+            flex-direction: column;
+            gap: 30px;
+
+            .footer__col,
+            .ph-col {
+                .col-inner {
+                    flex-direction: column;
+                }
+            }
+        }
+
+        .assets-row {
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+    }
+
+    @media (max-width: 768px) {
+
+        .footer__grid,
+        .desktopFooter {
+            display: none;
+            /* hide desktop grid on small screens */
+        }
+
+        .mobileFooter {
+            display: block;
+        }
+
+        .assets-row {
+            border-top: none;
+            margin-top: 0;
+        }
+    }
+}

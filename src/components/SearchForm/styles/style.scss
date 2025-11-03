@@ -1,16 +1,18 @@
 .Search-form-container {
     width: 100%;
     height: 80px;
-    background-color: #6610f2;
+    background-image: radial-gradient(circle, #0285c9, #1670b0, #1b5d97, #1b4a7f, #183867);
     display: flex;
     justify-content: center;
     align-items: center;
+
     .form {
         height: 40px;
         display: flex;
         justify-content: center;
         align-items: center;
         gap: 0;
+
         #search-inp {
             height: 100%;
             width: 300px;
@@ -22,7 +24,7 @@
         }
 
         .btn {
-            height:100% ;
+            height: 100%;
             width: 100px;
             background-color: #ff4400;
             border-radius: 0 30px 30px 0;
@@ -32,7 +34,8 @@
             outline: none;
             border: none;
             cursor: pointer;
-            >img{
+
+            >img {
                 width: 18px;
                 height: 18px;
             }

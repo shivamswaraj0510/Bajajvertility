@@ -18,8 +18,8 @@ function Background({ hero, children, onVideoEnded }) {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // const assetUrl = width >= 1280 ? hero?.desktopUrl : hero?.tabletUrl;
-  const assetUrl = hero?.desktopUrl ;
+  // Choose asset based on kind: images use desktopUrl, videos use videoUrl
+  const assetUrl = hero?.kind === "video" ? hero?.videoUrl : hero?.desktopUrl;
 
   return (
     <div className="hpcarousel-bg">

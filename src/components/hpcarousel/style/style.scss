@@ -4,6 +4,7 @@
     width: 100vw;
     box-sizing: border-box;
     padding-top: var(--hp-top-offset);
+    background-image: radial-gradient(circle, #0285c9, #1670b0, #1b5d97, #1b4a7f, #183867);
 
     .hpcarousel-bg {
         width: 100%;
@@ -74,4 +75,3 @@
     }
 
 }
-
