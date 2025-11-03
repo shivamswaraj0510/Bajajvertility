@@ -1,0 +1,335 @@
+/* ============================================================================
+   Park Facilities (International Patients) – SCSS
+   - No @use/@forward: works with Vite + dart-sass or node-sass
+   - Converts Bootstrap-like utilities (pt-22, pb-20, text-center, etc.)
+   - Recreates a two-column layout, blue overlay header, glass blocks, cards
+   ========================================================================== */
+
+/* -------------------- Design tokens --------------------------------------- */
+$pf-blue:        #0f3a68;         // overlay panel base
+$pf-blue-70:     rgba(15, 58, 104, 0.70); // translucent panel
+$pf-glass-bg:    rgba(255, 255, 255, 0.18);
+$pf-glass-bg-2:  rgba(255, 255, 255, 0.22);
+$pf-border:      rgba(255, 255, 255, 0.22);
+$pf-white:       #ffffff;
+$pf-black:       #1e2a3b;
+$pf-muted:       #cfd7e3;
+$pf-link:        #d7e4ff;
+$pf-link-hover:  #78a6ff;
+$pf-accent:      #ff2f3d;         // small red accent bar
+
+$container-max:  1200px;
+$g-1: .25rem;
+$g-2: .5rem;
+$g-3: 1rem;
+$g-4: 1.5rem;
+$g-5: 2rem;
+$g-6: 3rem;
+
+$bp-sm: 576px;
+$bp-md: 768px;
+$bp-lg: 992px;
+
+/* -------------------- Base section ---------------------------------------- */
+.park_facilities {
+    
+  --pf-bg: url("https://www.parkhospital.in/public/frontend/img2/Testimonial_background.webp");
+  position: relative;
+  isolation: isolate; /* allow overlay stacking */
+  color: $pf-white;
+
+  /* Background image + soft darkening overlay */
+  background: center/cover no-repeat;
+  background-image: var(--pf-bg);
+  min-height: 520px;
+
+  /* Subtle dim overlay so text is readable on varied images */
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    z-index: 0;
+  }
+
+  /* Section inner layout */
+  .ph-container {
+    position: relative;
+    z-index: 1; /* above background dim */
+    max-width: $container-max;
+    margin-inline: auto;
+    padding-inline: $g-3;
+  }
+
+  .ph-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $g-5;
+  }
+
+  .ph-col {
+    flex: 1 1 100%;
+    min-width: 0;
+
+    @media (min-width: $bp-md) {
+      flex: 0 0 calc(50% - #{$g-5}/2);
+      max-width: calc(50% - #{$g-5}/2);
+    }
+  }
+}
+
+/* -------------------- Blue overlay header (left column) ------------------- */
+.testBg {
+  background: $pf-blue-70;
+  border: 1px solid $pf-border;
+  border-radius: .75rem;
+  box-shadow: 0 8px 28px rgba(0,0,0,.35);
+  padding: $g-5;
+  backdrop-filter: saturate(120%) blur(2px);
+
+  .text-center { text-align: center; }
+
+  .comHeading {
+    margin-bottom: 1.25rem;
+
+    h2.white {
+      color: $pf-white;
+      font-size: clamp(1.4rem, 1.1rem + 1.5vw, 2rem);
+      font-weight: 700;
+      letter-spacing: .2px;
+    }
+
+    h3.white {
+      color: $pf-white;
+      font-size: clamp(1rem, .9rem + 1vw, 1.5rem);
+      font-weight: 600;
+      opacity: .95;
+      position: relative;
+      display: inline-block;
+      padding-bottom: .45rem;
+
+      /* small red accent bar under the sub-heading */
+      &::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: -6px;
+        width: 32px;
+        height: 4px;
+        border-radius: 999px;
+        background: $pf-accent;
+      }
+    }
+  }
+
+  p.white {
+    color: $pf-white;
+    margin: 0;
+    font-weight: 500;
+    opacity: .9;
+  }
+}
+
+/* -------------------- Glass blocks grid (left column lower) --------------- */
+.testBlocks {
+  margin-top: $g-4;
+}
+.testBlocks-inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $g-4;
+
+  @media (min-width: $bp-sm) {
+    grid-template-columns: 1.2fr 1fr; /* left area larger */
+  }
+
+  /* left area */
+  .left {
+    background: $pf-glass-bg;
+    border: 1px solid $pf-border;
+    border-radius: .75rem;
+    padding: $g-5;
+    backdrop-filter: blur(6px);
+    box-shadow: 0 6px 18px rgba(0,0,0,.25);
+
+    p { color: $pf-white; }
+    .upload-btn-wrapper {
+      margin-top: $g-3;
+    }
+    .uploadBtn {
+      display: inline-block;
+      padding: .6rem 1rem;
+      border-radius: .6rem;
+      background: $pf-white;
+      color: $pf-black;
+      font-weight: 600;
+      border: 1px solid transparent;
+      box-shadow: 0 8px 16px rgba(0,0,0,.25);
+      transition: transform .12s ease, filter .12s ease;
+
+      &:hover { filter: brightness(.95); transform: translateY(-1px); }
+      &:focus-visible {
+        outline: 2px solid $pf-link;
+        outline-offset: 2px;
+      }
+    }
+  }
+
+  /* right blocks list */
+  .right {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $g-3;
+
+    @media (min-width: $bp-sm) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .block {
+      background: $pf-glass-bg-2;
+      border: 1px solid $pf-border;
+      border-radius: .75rem;
+      padding: $g-4;
+      backdrop-filter: blur(4px);
+      box-shadow: 0 6px 18px rgba(0,0,0,.25);
+      transition: transform .12s ease, box-shadow .12s ease;
+
+      a { text-decoration: none; }
+
+      p.m-0.black {
+        margin: 0;
+        color: $pf-black;
+        font-weight: 700;
+        letter-spacing: .15px;
+        /* make the text sit on a light chip */
+        background: rgba(255,255,255,.75);
+        display: inline-block;
+        padding: .35rem .6rem;
+        border-radius: .5rem;
+        box-shadow: inset 0 0 0 1px rgba(0,0,0,.06);
+      }
+
+      &:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 10px 28px rgba(0,0,0,.28);
+      }
+    }
+  }
+}
+
+/* -------------------- Right column cards ---------------------------------- */
+.facilities-right {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $g-4;
+
+  .fac-card {
+    background: $pf-blue-70;
+    border: 1px solid $pf-border;
+    border-radius: .75rem;
+    padding: $g-5;
+    box-shadow: 0 8px 24px rgba(0,0,0,.32);
+    backdrop-filter: blur(3px);
+
+    h4 {
+      margin: 0 0 $g-3 0;
+      color: $pf-white;
+      font-weight: 700;
+      position: relative;
+      display: inline-block;
+      padding-bottom: .35rem;
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -6px;
+        width: 28px;
+        height: 4px;
+        border-radius: 999px;
+        background: $pf-accent;
+      }
+    }
+
+    ul {
+      list-style: none;
+      margin: 0; padding: 0;
+      li {
+        color: $pf-white;
+        margin: 0 0 .6rem 0;
+        opacity: .95;
+      }
+    }
+
+    p.muted {
+      color: $pf-muted;
+      margin: 0 0 .5rem 0;
+
+      a { color: $pf-link; text-decoration: none; }
+      a:hover { color: $pf-link-hover; text-decoration: underline; }
+    }
+  }
+
+  .mt-16 { margin-top: 4rem; }
+}
+
+/* -------------------- Utility classes (Bootstrap-like) -------------------- */
+/* spacing utilities used by your component */
+.pt-22 { padding-top: 8rem !important; }          /* large top pad */
+.pb-20 { padding-bottom: 7rem !important; }       /* large bottom pad */
+.pb-5  { padding-bottom: 1.25rem !important; }
+.pt-3  { padding-top: .75rem !important; }
+.mb-15 { margin-bottom: 3.75rem !important; }
+.mb-sm-5 {
+  @media (max-width: $bp-sm) { margin-bottom: 1.25rem !important; }
+}
+.m-0   { margin: 0 !important; }
+
+/* text & color utilities */
+.text-center { text-align: center !important; }
+.white       { color: $pf-white !important; }
+.black       { color: $pf-black !important; }
+
+/* simple grid helpers (ph-col-6 = half at md+) */
+.ph-col-6 {
+  flex: 1 1 100%;
+  @media (min-width: $bp-md) {
+    flex: 0 0 calc(50% - #{$g-5}/2);
+    max-width: calc(50% - #{$g-5}/2);
+  }
+}
+
+/* -------------------- Fine separators for “panel grid” look -------------- */
+/* Optional: add faint separators to the entire left block area to resemble
+   segmented panels across the overlay. Toggle by adding .panel-seps class.  */
+.panel-seps {
+  position: relative;
+
+  /* vertical */
+  &::before, &::after {
+    content: "";
+    position: absolute;
+    top: 0; bottom: 0;
+    width: 1px;
+    background: rgba(255,255,255,.15);
+    z-index: 1;
+  }
+  &::before { left: 33.33%; }
+  &::after  { left: 66.66%; }
+
+  /* horizontal inside (use inner separator lines) */
+  .sep-row {
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0; right: 0;
+      top: 50%;
+      height: 1px;
+      background: rgba(255,255,255,.15);
+      z-index: 1;
+    }
+  }
+}
