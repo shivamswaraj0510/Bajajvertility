@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useMemo, useState } from "react";
 import "./styles/carousel.scss";
 import { useCarousel } from "./javscript/carousel";
-import { client } from "../../lib/sanity";
+import { client } from "../../../lib/sanity";
 
 // ---- GROQ QUERY ----
 const CAROUSEL_BY_ID = `

@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useState } from "react";
 import "./styles/footer.scss";
-import { client } from "../../lib/sanity";
+import { client } from "../../../lib/sanity";
 
 // ---- GROQ QUERIES ----
 const FOOTER_BY_ID = `

@@ -3,7 +3,7 @@ import { useEffect, useState, useCallback } from "react";
 import "./style/style.scss";
 import Background from "./Background";
 import Carousel from "./Carousel";
-import { client } from "../../lib/sanity";
+import { client } from "../../../lib/sanity";
 
 const query = `*[_type == "HpCardCarousel"] | order(order asc){
   _id,

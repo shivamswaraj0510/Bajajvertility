@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import CardCarousel from "./cardCarousel";
 import "./styles/stylemain.scss";
-import { client } from "../../lib/sanity";
+import { client } from "../../../lib/sanity";
 
 const query = `*[_type == "cardCarousel"]{
   _id,

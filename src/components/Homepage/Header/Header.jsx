@@ -1,5 +1,5 @@
 import "./styles/style.scss";
-import VitalityLogo from "../../assets/VitalityLogo.png";
+import VitalityLogo from "../../../assets/VitalityLogo.png";
 const Header = () => (
   <header className="header">
     <div className="header-logo">

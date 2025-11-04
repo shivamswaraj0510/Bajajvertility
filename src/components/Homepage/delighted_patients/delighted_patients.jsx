@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./styles/delighted_patients.scss";
-import { client } from "../../lib/sanity";
+import { client } from "../../../lib/sanity";
 
 const DelightedPatientsCarousel = () => {
   const [title, setTitle] = useState("Loading...");

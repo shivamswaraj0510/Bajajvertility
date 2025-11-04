@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { client } from "../../lib/sanity"; // Import your configured Sanity client
+import { client } from "../../../lib/sanity"; // Import your configured Sanity client
 import "./styles/header_carousel.scss";
 
 function HealthBlogsSection({ id, className }) {

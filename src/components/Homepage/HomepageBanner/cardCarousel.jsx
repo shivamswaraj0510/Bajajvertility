@@ -1,7 +1,7 @@
 // components/CardCarousel.jsx
 import { useMemo, useState } from "react";
 import "./styles/style.scss";
-import star from "../../assets/starholo.png";
+import star from "../../../assets/star.png";
 
 function CardCarousel({ items = [], visible = 4 }) {
   const total = items?.length ?? 0;

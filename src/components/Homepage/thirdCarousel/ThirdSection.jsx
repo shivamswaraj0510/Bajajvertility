@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import SingleCardCarousel from "./SingleCardCarousel";
 import "./styles/stylemain.scss";
-import { client } from "../../lib/sanity";
+import { client } from "../../../lib/sanity";
 
 const query = `*[_type == "thirdSectionSingleCarousel"]{
   _id,
