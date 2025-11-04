@@ -1,4 +1,4 @@
-import Header from "../components/Header/header";
+import Header from "../components/Header/Header";
 import Hpcarousel from "../components/hpcarousel/hpcarousel";
 import SearchForm from "../components/SearchForm/SearchForm";
 import FirstCarousel from "../components/HomepageBanner/FirstCarousel";
