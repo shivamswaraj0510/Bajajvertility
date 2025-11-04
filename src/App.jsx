@@ -9,6 +9,8 @@ import UpdatesCarousel2 from "./components/Homepage/carousel/carousel";
 import Footer from "./components/Homepage/Footer/footer";
 import ParkFacilities from "./components/Homepage/parkFacilities/parkFacilities";
 import HeroBanner from "./components/FindDocter/herobanner/HeroBanner";
+import Specialist from "./components/FindDocter/herobanner/specialist/specialist";
+import HealthBlog from "./components/FindDocter/herobanner/healthBlog/HealthBlog";
 function App() {
   return (
     <>
@@ -28,7 +30,9 @@ function App() {
       <UpdatesCarousel2 docId="8dc53cb4-3cc0-460c-b616-fa9a89503fff" />
       <ParkFacilities /> */}
 
-      <HeroBanner/>
+      <HeroBanner />
+      <Specialist />
+      <HealthBlog/>
       <Footer />
     </>
   );
