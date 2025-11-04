@@ -1,0 +1,154 @@
+/* QuickAppointment.scss */
+
+/* ===== Theme Variables ===== */
+$card-blue: #275baa; // blue card like screenshot
+$brand-blue: #116db8; // heading accent
+$accent-red: #e74c3c; // red for select arrow & CTA
+$text-dark: #1f2328;
+$white: #ffffff;
+$border-white: rgba(255, 255, 255, 0.35);
+
+.pattern-bg {
+  background-color: #ffffff;
+  background-image: radial-gradient(circle at 1px 1px, rgba(0, 0, 0, 0.04) 1px, transparent 0), radial-gradient(circle at 9px 9px, rgba(0, 0, 0, 0.04) 1px, transparent 0), linear-gradient(45deg, transparent 49%, rgba(0, 0, 0, 0.04) 50%, transparent 51%), linear-gradient(-45deg, transparent 49%, rgba(0, 0, 0, 0.04) 50%, transparent 51%);
+  background-size: 20px 20px, 20px 20px, 20px 20px, 20px 20px;
+  background-position: 0 0, 0 0, 0 0, 0 0;
+  opacity: 1;
+}
+
+/* ===== Layout Container ===== */
+.quick-appt {
+  padding-top: 60px;
+  width: 100%;
+  padding-bottom: 50px;
+
+  .quick-appt__header {
+    text-align: center;
+    margin-bottom: 20px;
+
+    .quick-appt__title {
+      font-size: 28px;
+      font-weight: 600;
+      color: $brand-blue;
+      margin: 0;
+    }
+  }
+
+  .quick-appt__card {
+    max-width: 980px;
+    margin: 0 auto;
+    background: $card-blue;
+    padding: 60px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  }
+
+  .quick-appt__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 25px 30px;
+
+    /* Full-width item (textarea) */
+    .field--full {
+      grid-column: 1 / -1;
+    }
+  }
+
+  /* Field block */
+  .field {
+    display: flex;
+    flex-direction: column;
+
+    .label {
+      color: $white;
+      font-size: 14px;
+      margin-bottom: 8px;
+      font-weight: 500;
+      line-height: 1.2;
+    }
+
+    .control {
+      width: 100%;
+      height: 44px;
+      border-radius: 999px;
+      background: $white;
+      color: $text-dark;
+      border: 1px solid $border-white;
+      padding: 10px 14px;
+      outline: none;
+      transition: box-shadow 0.15s ease, border-color 0.15s ease;
+
+      &::placeholder {
+        color: #8f98a3;
+      }
+
+      &:focus {
+        border-color: lighten($brand-blue, 10%);
+        box-shadow: 0 0 0 3px rgba($brand-blue, 0.25);
+      }
+    }
+
+    .textarea {
+      border-radius: 8px;
+      min-height: 180px;
+      resize: vertical;
+      padding: 12px 14px;
+      /* white background kept */
+    }
+
+    /* Custom select wrap to draw the red caret */
+    .select-wrap {
+      position: relative;
+
+      .select {
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        padding-right: 40px;
+        /* room for caret */
+        background-image: url("data:image/svg+xml;utf8,\
+<svg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%23e74c3c' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'></polyline></svg>");
+        background-repeat: no-repeat;
+        background-position: right 12px center;
+        background-size: 18px;
+      }
+    }
+  }
+
+  /* Actions / CTA */
+  .actions {
+    margin-top: 18px;
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .btn {
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 12px 18px;
+    border-radius: 4px;
+
+    &--red {
+      background: $accent-red;
+      color: $white;
+      box-shadow: 0 2px 6px rgba($accent-red, 0.35);
+
+      &:hover {
+        background: darken($accent-red, 4%);
+      }
+
+      &:active {
+        background: darken($accent-red, 8%);
+      }
+    }
+  }
+
+  /* ===== Responsive ===== */
+  @media (max-width: 768px) {
+    .quick-appt__grid {
+      grid-template-columns: 1fr;
+      /* single column on mobile */
+    }
+  }
+}
