@@ -1,4 +1,4 @@
-import Header from "./components/Homepage/Header/Header";  
+import Header from "./components/Homepage/Header/Header";
 import SearchForm from "./components/Homepage/SearchForm/SearchForm";
 import Hpcarousel from "./components/Homepage/hpcarousel/hpcarousel";
 import FirstCarousel from "./components/Homepage/HomepageBanner/FirstCarousel";
@@ -32,7 +32,8 @@ function App() {
 
       <HeroBanner />
       <Specialist />
-      <HealthBlog/>
+      <HealthBlogsSection id="2a831094-d12b-46da-99ca-531d704bd07a" />
+      <UpdatesCarousel2 docId="8dc53cb4-3cc0-460c-b616-fa9a89503fff" />
       <Footer />
     </>
   );
