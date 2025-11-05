@@ -3,12 +3,36 @@ import { useMemo, useState } from "react";
 import "./styles/style.scss";
 import star from "../../assets/starholo.png";
 
+const renderStars = (rating) => {
+  const starsArr = [];
+  const maxStars = 5;
+  const filledStars = Math.min(Math.max(0, rating ?? 0), maxStars);
+  for (let i = 0; i < maxStars; i++) {
+    starsArr.push(
+      <img
+        key={i}
+        src={star}
+        alt="star"
+        className={`star-icon ${
+          i < filledStars ? "star-filled" : "star-empty"
+        }`}
+        style={{
+          opacity: i < filledStars ? 1 : 0.3,
+          width: "20px",
+          height: "20px",
+          marginRight: "4px",
+        }}
+      />
+    );
+  }
+  return starsArr;
+};
+
 function CardCarousel({ items = [], visible = 4 }) {
-  const total = items?.length ?? 0;
+  const total = Array.isArray(items) ? items.length : 0;
   const [start, setStart] = useState(0);
   const pageSize = Math.max(1, visible);
 
-  // Compute visible items with wrap-around
   const visibleItems = useMemo(() => {
     if (total === 0) return [];
     const out = [];
@@ -22,31 +46,6 @@ function CardCarousel({ items = [], visible = 4 }) {
 
   const prev = () => setStart((s) => (s - pageSize + total) % total);
   const next = () => setStart((s) => (s + pageSize) % total);
-
-  const renderStars = (rating) => {
-    const starsArr = [];
-    const maxStars = 5;
-    const filledStars = Math.min(Math.max(0, rating ?? 0), maxStars);
-    for (let i = 0; i < maxStars; i++) {
-      starsArr.push(
-        <img
-          key={i}
-          src={star}
-          alt="star"
-          className={`star-icon ${
-            i < filledStars ? "star-filled" : "star-empty"
-          }`}
-          style={{
-            opacity: i < filledStars ? 1 : 0.3,
-            width: "20px",
-            height: "20px",
-            marginRight: "4px",
-          }}
-        />
-      );
-    }
-    return starsArr;
-  };
 
   return (
     <div className="cardCarousel-container">
@@ -62,26 +61,8 @@ function CardCarousel({ items = [], visible = 4 }) {
       <div className="cardCarousel-viewport">
         <div className="cardCarousel-track">
           {visibleItems.map((item, idx) => {
-            const key =
-              item?.id ?? item?._id ?? item?._key ?? `${start}-${idx}`;
-            // support different image shapes: url string or object with asset.url
-            let imageSrc = null;
-            if (typeof item?.image === "string") imageSrc = item.image;
-            else if (item?.image?.asset?.url) imageSrc = item.image.asset.url;
-            else if (item?.imageUrl) imageSrc = item.imageUrl;
-            else if (item?.img) imageSrc = item.img;
-            else if (item?.thumbnail) imageSrc = item.thumbnail;
-
-            const altText =
-              item?.alt || item?.subtitle || item?.title || "card image";
-
-            const itemRating =
-              typeof item?.rating === "number"
-                ? item.rating
-                : typeof item?.renaking === "number"
-                ? item.renaking
-                : undefined;
-
+            const imgSrc = item.image;
+            const key = item?._key || item?._id || `${start}-${idx}`;
             return (
               <div
                 key={key}
@@ -89,19 +70,21 @@ function CardCarousel({ items = [], visible = 4 }) {
                 role="group"
                 aria-roledescription="slide"
               >
-                {imageSrc && (
-                  <img src={imageSrc} alt={altText} className="card-image" />
-                )}
+                {imgSrc ? (
+                  <div className="img">
+                    <img
+                      src={imgSrc}
+                      alt={item?.subtitle || item?.title || "card image"}
+                      className="card-image"
+                    />
+                  </div>
+                ) : null}
 
                 <div className="card-body">
-                  {item?.title ? (
-                    <h4 className="card-title">{item.title}</h4>
-                  ) : null}
-                  {item?.subtitle ? (
-                    <p className="card-sub">{item.subtitle}</p>
-                  ) : null}
+                  <p className="card-title">{item.title}</p>
 
-                  {typeof itemRating === "number" && (
+                  <p className="card-sub">{item.subtitle}</p>
+                  {typeof item.rating === "number" && (
                     <div
                       className="rating-container"
                       style={{
@@ -112,7 +95,7 @@ function CardCarousel({ items = [], visible = 4 }) {
                       }}
                     >
                       <div className="stars-wrapper">
-                        {renderStars(itemRating)}
+                        {renderStars(item.rating)}
                       </div>
                       <span
                         className="rating-number"
@@ -122,7 +105,7 @@ function CardCarousel({ items = [], visible = 4 }) {
                           color: "#666",
                         }}
                       >
-                        {itemRating}/5
+                        {item.rating}/5
                       </span>
                     </div>
                   )}

@@ -1,11 +1,11 @@
-$ul-bg:          #275baa;             
-$ul-white:       #ffffff;
-$ul-gray:        #e6ecf5;
-$ul-text:        #f2f5fa;
-$ul-red:         #ef3b2d;              
-$ul-arrow-bg:    rgba(255,255,255,.25);
-$ul-arrow-border:rgba(255,255,255,.45);
-$ul-shadow:      0 10px 24px rgba(0,0,0,.22);
+$ul-bg: #275baa;
+$ul-white: #ffffff;
+$ul-gray: #e6ecf5;
+$ul-text: #f2f5fa;
+$ul-red: #ef3b2d;
+$ul-arrow-bg: rgba(255, 255, 255, .25);
+$ul-arrow-border: rgba(255, 255, 255, .45);
+$ul-shadow: 0 10px 24px rgba(0, 0, 0, .22);
 
 $bp-sm: 576px;
 $bp-md: 768px;
@@ -15,14 +15,27 @@ $sp-2: .5rem;
 $sp-3: 1rem;
 $sp-4: 1.5rem;
 $sp-5: 2rem;
+$sp-6: 0rem;
 
 .com-padding.updateLaunche {
   background: $ul-bg;
   color: $ul-white;
 }
-.py-15   { padding-top: 2.5rem !important; padding-bottom: 3.75rem !important; }
-.pb-17   { padding-bottom: 4.25rem !important; }
-.pb-md-15{ @media (min-width: $bp-md) { padding-bottom: 3.75rem !important; } }
+
+.py-15 {
+  padding-top: 2.5rem !important;
+  padding-bottom: 3.75rem !important;
+}
+
+.pb-17 {
+  padding-bottom: 4.25rem !important;
+}
+
+.pb-md-15 {
+  @media (min-width: $bp-md) {
+    padding-bottom: 3.75rem !important;
+  }
+}
 
 .ul-container {
   max-width: 1200px;
@@ -48,14 +61,15 @@ $sp-5: 2rem;
 
 .ul-viewport {
   overflow: hidden;
+
 }
+
 
 .ul-track {
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: calc(100% / var(--visible-count, 1));
-  gap: $sp-4;
-  transition: transform .5s cubic-bezier(.22,.61,.36,1);
+  transition: transform .5s cubic-bezier(.22, .61, .36, 1);
 }
 
 .ul-slide {
@@ -73,7 +87,7 @@ $sp-5: 2rem;
 /* IMAGE + TITLE OVERLAY (matches screenshot) */
 .ul-media {
   position: relative;
-  width: 356px;
+  width: 300px;
   height: 224px;
   border-radius: 10px;
   overflow: hidden;
@@ -95,7 +109,7 @@ $sp-5: 2rem;
     color: $ul-white;
     font-weight: 800;
     line-height: 1.25;
-    text-shadow: 0 2px 6px rgba(0,0,0,.35);
+    text-shadow: 0 2px 6px rgba(0, 0, 0, .35);
     /* two lines as in screenshot; allow wrap */
     font-size: clamp(.95rem, .9rem + .5vw, 1.15rem);
   }
@@ -123,9 +137,12 @@ $sp-5: 2rem;
   border-radius: 6px;
   font-weight: 800;
   letter-spacing: .2px;
-  box-shadow: 0 8px 18px rgba(0,0,0,.25);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, .25);
 
-  &:hover { filter: brightness(1.05); }
+  &:hover {
+    filter: brightness(1.05);
+  }
+
   &:focus-visible {
     outline: 2px solid $ul-white;
     outline-offset: 2px;
@@ -135,39 +152,55 @@ $sp-5: 2rem;
 /* ----- Arrows (white; centered vertically) ----- */
 .ul-nav {
   position: absolute;
-  top: 50%;
+  top: 37%;
   transform: translateY(-50%);
-  width: 44px; height: 44px;
-  display: grid; place-items: center;
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
   color: $ul-white;
   background: $ul-arrow-bg;
   border: 1px solid $ul-arrow-border;
   border-radius: 999px;
-  box-shadow: 0 8px 22px rgba(0,0,0,.26);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, .26);
   cursor: pointer;
   z-index: 2;
 
-  &.ul-prev { left: $sp-3; }
-  &.ul-next { right: $sp-3; }
+  &.ul-prev {
+    left: $sp-6;
+  }
+
+  &.ul-next {
+    right: $sp-6;
+  }
 }
 
 /* ----- Dots ----- */
 .ul-dots {
-  display: flex; gap: $sp-2;
+  display: flex;
+  gap: $sp-2;
   justify-content: center;
   margin-top: $sp-4;
 }
+
 .ul-dot {
-  width: 10px; height: 10px;
+  width: 10px;
+  height: 10px;
   border-radius: 999px;
-  background: rgba(255,255,255,.35);
-  border: 1px solid rgba(255,255,255,.45);
+  background: rgba(255, 255, 255, .35);
+  border: 1px solid rgba(255, 255, 255, .45);
   cursor: pointer;
 
-  &.is-active { background: $ul-white; }
+  &.is-active {
+    background: $ul-white;
+  }
 }
 
 /* ----- Responsive: show 1 card per slide on small screens ----- */
 @media (max-width: $bp-md) {
-  .ul-media, .ul-caption { width: 100%; }
+
+  .ul-media,
+  .ul-caption {
+    width: 100%;
+  }  
 }

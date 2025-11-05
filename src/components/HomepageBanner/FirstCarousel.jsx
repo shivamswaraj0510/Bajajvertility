@@ -5,8 +5,12 @@ import { client } from "../../lib/sanity";
 
 const query = `*[_type == "cardCarousel"]{
   _id,
-  title,
+heading,
+description,
+subheading,
   cards[]{
+    title,
+    subTitle,
     alt,
     order,
     rating,
@@ -21,12 +25,18 @@ const query = `*[_type == "cardCarousel"]{
 
 const FirstCarousel = () => {
   const [items, setItems] = useState([]);
+  const [sectionData, setSectionData] = useState([]);
 
   useEffect(() => {
     let mounted = true;
     async function fetchData() {
       try {
         const docs = await client.fetch(query);
+        setSectionData({
+          heading: docs[0].heading,
+          subHeading: docs[0].subheading,
+          description: docs[0].description,
+        });
         // flatten cards from all documents and map to cardCarousel shape
         const cards = (docs || []).flatMap((doc) =>
           (doc.cards || []).map((c, idx) => ({
@@ -35,7 +45,6 @@ const FirstCarousel = () => {
             subtitle: c.alt || "",
             image: c?.image?.asset?.url || "",
             order: c.order ?? idx,
-            // include rating from Sanity so frontend can render stars
             rating: typeof c.rating === "number" ? c.rating : undefined,
           }))
         );
@@ -55,15 +64,11 @@ const FirstCarousel = () => {
   return (
     <section className="first-carousel">
       <div className="headings">
-        <h2 className="heading">Our Network of Hospitals</h2>
+        <h2 className="heading">{sectionData.heading}</h2>
       </div>
       <div className="sub-heading-section">
-        <p>
-          Park Group of Hospitals is second largest private hospital chain in
-          North India with a network of 13 hospitals to provide healthcare
-          services.
-        </p>
-        <h3>All Locations</h3>
+        <p>{sectionData.description}</p>
+        <h3>{sectionData.subHeading}</h3>
       </div>
       <CardCarousel items={items} />
     </section>
