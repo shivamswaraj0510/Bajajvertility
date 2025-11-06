@@ -41,8 +41,9 @@ const FirstCarousel = () => {
         const cards = (docs || []).flatMap((doc) =>
           (doc.cards || []).map((c, idx) => ({
             id: c._key ?? `${doc._id}-${idx}`,
-            title: doc.title || "",
-            subtitle: c.alt || "",
+            title: c.title || "",
+            alt: c.alt || "",
+            subtitle: c.subtitle || "",
             image: c?.image?.asset?.url || "",
             order: c.order ?? idx,
             rating: typeof c.rating === "number" ? c.rating : undefined,

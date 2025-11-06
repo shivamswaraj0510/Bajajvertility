@@ -1,9 +1,8 @@
 import Header from "../components/Header/Header";
 import Hpcarousel from "../components/hpcarousel/hpcarousel";
 import SearchForm from "../components/SearchForm/SearchForm";
-import FirstCarousel from "../components/HomepageBanner/FirstCarousel";
+import FirstCarousel from "../components/FirstCarousel/FirstCarousel";
 import SecondCarousel from "../components/secondCarousel/SecondCarousel";
-import Thirdsection from "../components/thirdCarousel/ThirdSection";
 import ThirdSection from "../components/thirdCarousel/ThirdSection";
 import HealthBlogsSection from "../components/Header_carousel/header_carousel";
 import UpdatesCarousel2 from "../components/carousel/carousel";
@@ -33,7 +32,6 @@ const Home = () => {
 };
 
 export default Home;
-
 
 // import { useNavigate } from "react-router-dom";
 // import Header from "../components/Header/header";
@@ -82,4 +80,3 @@ export default Home;
 // };
 
 // export default Home;
-
