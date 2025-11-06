@@ -66,7 +66,7 @@ function CardCarousel({ items = [], visible = 4 }) {
             return (
               <div
                 key={key}
-                className="cardCarousel-item card"
+                className="cardCarousel-item"
                 role="group"
                 aria-roledescription="slide"
               >
@@ -81,7 +81,7 @@ function CardCarousel({ items = [], visible = 4 }) {
                 ) : null}
 
                 <div className="card-body">
-                  <p className="card-title">{item.title}</p>
+                  <p className="card-sub">{item.title}</p>
 
                   <p className="card-sub">{item.subtitle}</p>
                   {typeof item.rating === "number" && (
