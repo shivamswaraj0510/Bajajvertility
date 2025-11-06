@@ -1,19 +1,21 @@
 import { useNavigate } from "react-router-dom";
-
+import React from "react";
+import AboutUs from "../components/About/about_us_comp1";
+import Header from "../components/Header/Header";
+import Footer from "../components/Footer/footer";
+import AboutComp2 from "../components/About/comp2";
+import AboutusComp3 from "../components/About/comp3";
 const About = () => {
   const navigate = useNavigate();
 
   return (
-    <div style={{ textAlign: "center", marginTop: "50px" }}>
-      <h1>About Us Page</h1>
-      <p>This is the About page content.</p>
-      <button
-        style={{ marginTop: "20px", padding: "10px 20px" }}
-        onClick={() => navigate("/")}
-      >
-        Go Back to Home
-      </button>
-    </div>
+    <>
+      <Header />
+      <AboutUs />
+        <AboutComp2 />
+        <AboutusComp3 />
+      <Footer />
+    </>
   );
 };
 

@@ -1,0 +1,304 @@
+// .aboutus-container {
+//   margin-top: 124px;
+//   width: 100%;
+//   height: 480px;
+//   display: grid;
+//   grid-template-columns: 3fr 1fr; // Left (big) : Right (small stacked)
+//   overflow: hidden;
+// }
+
+// .aboutus-components {
+//   display: contents; // allows child cards to follow the grid layout
+// }
+
+// .aboutus-card {
+//   position: relative;
+//   overflow: hidden;
+//   cursor: pointer;
+//   transition: all 0.3s ease-in-out;
+
+//   img.aboutus-card-image {
+//     width: 100%;
+//     height: 100%;
+//     object-fit: cover;
+//     transition: all 0.3s ease-in-out;
+//   }
+
+//   .aboutus-card-title {
+//     position: absolute;
+//     inset: 0;
+//     font-size: 1.5rem;
+//     font-weight: 600;
+//     z-index: 2;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     text-align: center;
+//     transition: color 0.3s ease;
+//   }
+// }
+
+// /* === Left large image (NO overlay, black text) === */
+// .aboutus-card:first-child {
+//   grid-column: 1 / 2;
+//   grid-row: 1 / 4; // takes full height
+
+//   .aboutus-card-title {
+//     color: black;
+//   }
+
+//   img.aboutus-card-image {
+//     filter: brightness(1);
+//   }
+// }
+
+// /* === Right stacked images WITH overlay === */
+// .aboutus-card:nth-child(2),
+// .aboutus-card:nth-child(3),
+// .aboutus-card:nth-child(4) {
+//   grid-column: 2 / 3;
+//   position: relative;
+
+//   /* Add dark overlay */
+//   &::after {
+//     content: "";
+//     position: absolute;
+//     inset: 0;
+//     background: rgba(0, 0, 0, 0.5);
+//     z-index: 1;
+//     transition: background 0.3s ease;
+//   }
+
+//   .aboutus-card-title {
+//     color: white;
+//   }
+
+//   &:hover::after {
+//     background: rgba(0, 0, 0, 0.3);
+//   }
+
+//   &:hover img.aboutus-card-image {
+//     transform: scale(1.05);
+//   }
+// }
+
+// /* === Grid positioning for right side cards === */
+// .aboutus-card:nth-child(2) {
+//   grid-row: 1 / 2;
+//   border-bottom: 3px solid #ff6600;
+// }
+
+// .aboutus-card:nth-child(3) {
+//   grid-row: 2 / 3;
+//   border-bottom: 3px solid #ff6600;
+// }
+
+// .aboutus-card:nth-child(4) {
+//   grid-row: 3 / 4;
+// }
+
+// /* === Optional: No Image Placeholder === */
+// .aboutus-noimage {
+//   background-color: #eaeaea;
+//   color: #555;
+//   font-size: 1.2rem;
+//   text-align: center;
+//   height: 100%;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+// }
+
+// /* === Responsive (Mobile View) === */
+// @media (max-width: 900px) {
+//   .aboutus-container {
+//     grid-template-columns: 1fr;
+//     grid-template-rows: auto;
+//     height: auto;
+//   }
+
+//   .aboutus-card {
+//     grid-column: unset;
+//     grid-row: unset;
+//     height: 250px;
+
+//     &::after {
+//       background: none !important;
+//     }
+
+//     .aboutus-card-title {
+//       color: black !important;
+//     }
+//   }
+
+//   .aboutus-card:first-child {
+//     height: 300px;
+//   }
+// }
+
+
+.aboutus-container {
+  margin-top: 124px;
+  width: 100%;
+  height: 480px;
+  display: grid;
+  grid-template-columns: 3fr 1fr; // Left (big) : Right (small stacked)
+  overflow: hidden;
+}
+
+.aboutus-components {
+  display: contents; // allows child cards to follow the grid layout
+}
+
+.aboutus-card {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+
+  img.aboutus-card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .aboutus-card-title {
+    position: absolute;
+    inset: 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: black;
+    transition: color 0.3s ease;
+
+    /* Orange top & bottom strips */
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60%;
+      height: 4px;
+      width: 50px;
+      background-color: #ff6600;
+    }
+
+    &::before {
+      top: calc(50% - 1.8rem); /* above text */
+    }
+
+    &::after {
+      bottom: calc(50% - 1.8rem); /* below text */
+    }
+  }
+}
+
+/* === Left large image (NO overlay, black text) === */
+.aboutus-card:first-child {
+  grid-column: 1 / 2;
+  grid-row: 1 / 4;
+
+  img.aboutus-card-image {
+    filter: brightness(1);
+  }
+
+  .aboutus-card-title {
+    color: black;
+  }
+}
+
+/* === Right stacked images WITH overlay === */
+.aboutus-card:nth-child(2),
+.aboutus-card:nth-child(3),
+.aboutus-card:nth-child(4) {
+  grid-column: 2 / 3;
+  position: relative;
+
+  /* Add dark overlay */
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 2;
+    transition: background 0.3s ease;
+  }
+
+  .aboutus-card-title {
+    color: white;
+  }
+
+  &:hover::after {
+    background: rgba(0, 0, 0, 0.3);
+  }
+
+  &:hover img.aboutus-card-image {
+    transform: scale(1.05);
+  }
+}
+
+/* === Grid positioning for right side cards === */
+.aboutus-card:nth-child(2) {
+  grid-row: 1 / 2;
+  border-bottom: 3px solid #ff6600;
+}
+
+.aboutus-card:nth-child(3) {
+  grid-row: 2 / 3;
+  border-bottom: 3px solid #ff6600;
+}
+
+.aboutus-card:nth-child(4) {
+  grid-row: 3 / 4;
+}
+
+/* === No Image Placeholder === */
+.aboutus-noimage {
+  background-color: #eaeaea;
+  color: #555;
+  font-size: 1.2rem;
+  text-align: center;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* === Responsive (Mobile View) === */
+@media (max-width: 900px) {
+  .aboutus-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    height: auto;
+  }
+
+  .aboutus-card {
+    grid-column: unset;
+    grid-row: unset;
+    height: 250px;
+
+    &::after {
+      background: none !important;
+    }
+
+    .aboutus-card-title {
+      color: black !important;
+
+      &::before,
+      &::after {
+        width: 50px;
+        background-color: #ff6600;
+      }
+    }
+  }
+
+  .aboutus-card:first-child {
+    height: 300px;
+  }
+}
