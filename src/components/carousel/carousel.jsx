@@ -64,20 +64,24 @@ export default function UpdatesCarousel2({ docId }) {
   }, [doc]);
 
   // ---- Hook after we know slideCount ----
-  const { index, next, prev, goTo, setTrack, handleKeyDown, visibleCount } = useCarousel({
-    slideCount: slides.length,
-    autoplay: false,
-    interval: 5000,
-    trackRef,
-    visibleDesktop: 3,
-  });
+  const { index, next, prev, goTo, setTrack, handleKeyDown, visibleCount } =
+    useCarousel({
+      slideCount: slides.length,
+      autoplay: false,
+      interval: 5000,
+      trackRef,
+      visibleDesktop: 3,
+    });
 
   useEffect(() => setTrack(trackRef.current), [setTrack]);
 
   // ---- Loading / Error / Empty states ----
   if (loading) {
     return (
-      <section className="com-padding updateLaunche py-15 pb-md-15 pb-17" aria-busy="true">
+      <section
+        className="com-padding updateLaunche py-15 pb-md-15 pb-17"
+        aria-busy="true"
+      >
         <div className="ul-container">
           <p>Loading carousel…</p>
         </div>
@@ -87,7 +91,10 @@ export default function UpdatesCarousel2({ docId }) {
 
   if (error || !doc) {
     return (
-      <section className="com-padding updateLaunche py-15 pb-md-15 pb-17" role="alert">
+      <section
+        className="com-padding updateLaunche py-15 pb-md-15 pb-17"
+        role="alert"
+      >
         <div className="ul-container">
           <p>{error ?? "Carousel not found."}</p>
         </div>
@@ -122,6 +129,7 @@ export default function UpdatesCarousel2({ docId }) {
             type="button"
             className="ul-nav ul-prev"
             aria-label="Previous"
+            disabled={index === 0}
             onClick={prev}
           >
             ‹
@@ -177,13 +185,16 @@ export default function UpdatesCarousel2({ docId }) {
             className="ul-nav ul-next"
             aria-label="Next"
             onClick={next}
+            disabled={index >= Math.ceil(slides.length / visibleCount) - 1}
           >
             ›
           </button>
 
           {/* dots */}
           <div className="ul-dots" role="tablist" aria-label="Slides">
-            {slides.map((_, i) => (
+            {Array.from({
+              length: Math.ceil(slides.length / visibleCount),
+            }).map((_, i) => (
               <button
                 key={i}
                 role="tab"

@@ -31,11 +31,11 @@ const DelightedPatientsCarousel = () => {
   }, []);
 
   const next = () => {
-    setFade(false);
+    setFade(true);
     setTimeout(() => {
       setIdx((p) => (p + 1) % reviews.length);
-      setFade(true);
-    }, 300);
+      setFade(false);
+    }, 600);
   };
 
   useEffect(() => {
@@ -45,17 +45,16 @@ const DelightedPatientsCarousel = () => {
     }
   }, [reviews]);
 
-  const ReviewCard = ({ review, fadeClass }) => (
-    <div className={`review-card ${fadeClass || ""}`}>
+  const ReviewCard = ({ review }) => (
+    <div className="review-card">
       <div className="card-top">
-        {/* Keep structure intact, just replace URL dynamically */}
         <img
           src={review.imageUrl}
           alt={review.image_description}
-          style={{ width: "100%", height: "auto" }}
+          style={{ width: "192px", height: "96px" }}
         />
+        <p>{review.image_description}</p>
       </div>
-      <p className="review-text">{review.image_description}</p>
     </div>
   );
 
@@ -76,8 +75,9 @@ const DelightedPatientsCarousel = () => {
       <p className="subtitle">Our True Guardians</p>
 
       <div className="reviews-container">
-        <div className="card-wrapper">
-          <ReviewCard review={leftReview} fadeClass={fade ? "fade-in" : "fade-out"} />
+        <div className="card-wrapper" fadeClass={fade ? "fade-in" : "fade-out"}>
+          <ReviewCard review={leftReview} />
+          <ReviewCard review={rightReview} />
         </div>
       </div>
     </section>
