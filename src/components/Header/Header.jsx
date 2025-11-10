@@ -2,13 +2,9 @@ import "./styles/style.scss";
 import { useNavigate } from 'react-router-dom';
 import VitalityLogo from "../../assets/VitalityLogo.png";
 const Header = () => {
-  const navigate = useNavigate();
-  const handleOnClick = (path = '/') => {
-    navigate(path);
-  }
   return (
     <header className="header">
-      <div className="header-logo" onClick={handleOnClick()}>
+      <div className="header-logo">
         <img src={VitalityLogo} alt="bajaj vitality" />
       </div>
       <div className="header-menu">
