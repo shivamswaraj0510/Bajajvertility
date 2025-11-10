@@ -1,0 +1,34 @@
+.blogs-container {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 32px 0;
+
+    .blog-title {
+        font-size: 24px;
+        font-weight: 600;
+        margin-bottom: 8px;
+    }
+
+    .blog-item {
+        padding: 16px;
+        border-radius: 8px;
+        margin-bottom: 24px;
+        background-color: #fff;
+
+        .blog-subheading {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 16px;
+        }
+
+        .blog-body {
+            font-size: 16px;
+            line-height: 20px;
+            color: #333;
+        }
+    }
+}

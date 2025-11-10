@@ -91,7 +91,7 @@ color: #ffffff;
  
 
 .delighted-section .review-card {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 12px;
   border-radius: 8px;
@@ -101,9 +101,9 @@ color: #ffffff;
 }
 
 .delighted-section .review-card .card-top {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: inline-flex;
+  flex-direction: row;
+  align-items: flex-start;
   justify-content: center;
   gap: 6px;
   min-width: 100px;
@@ -127,30 +127,25 @@ color: #ffffff;
   text-shadow: none;
 }
 
-.delighted-section .review-card .review-text {
-  flex: 1;
+.delighted-section .review-card p {
+
+  display: inline-flex;
   font-size: 0.95rem;
   line-height: 1.4;
   color: #fff;
-  margin: 0;
+  margin-left: 10px;
 }
  
 /* Fade states for the carousel (only for the second card in this view) */
-
-.delighted-section .fade-in {
-
+.fade-in {
   opacity: 1;
-
-  transition: opacity 0.3s ease-in;
-
+  transform: translateY(0);
+  transition: opacity 0.6s ease-in, transform 0.6s ease-in;
 }
- 
-.delighted-section .fade-out {
-
+.fade-out {
   opacity: 0;
-
-  transition: opacity 0.3s ease-out;
-
+  transform: translateY(10px); // Moves card upward while fading out
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
  
 /* Carousel navigation arrow - positioning on the right of the container */

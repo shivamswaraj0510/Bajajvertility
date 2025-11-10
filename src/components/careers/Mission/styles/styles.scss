@@ -1,0 +1,35 @@
+.mission-section {
+    background-color: #deeeff;
+    padding: 32px 90px;
+    border-radius: 8px;
+
+
+    .mission-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        flex-flow: row-reverse;
+        padding: 2rem;
+        gap: 2rem;
+
+        .mission-content {
+            flex: 1;
+
+            .mission-heading {
+                font-size: 2rem;
+                margin-bottom: 1rem;
+            }
+
+            p {
+                font-size: 1rem;
+                line-height: 1.5;
+            }
+        }
+    }
+
+    .container-flow-left {
+        flex-flow: row !important;
+
+    }
+}
