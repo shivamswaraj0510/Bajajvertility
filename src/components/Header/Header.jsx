@@ -85,6 +85,7 @@ const Header = () => {
           <a href="/about">About Us</a>
           <a href="/buy-medicines">Buy Medicines</a>
           <a href="/careers">Careers</a>
+          <a href="/healthpackage">Health Packages</a>
         </nav>
 
         <div className="header-buttons">
