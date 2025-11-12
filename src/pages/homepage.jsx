@@ -1,7 +1,6 @@
 import Header from "../components/Header/Header";
 import Hpcarousel from "../components/hpcarousel/hpcarousel";
 import SearchForm from "../components/SearchForm/SearchForm";
-import FirstCarousel from "../components/FirstCarousel/FirstCarousel";
 import SecondCarousel from "../components/secondCarousel/SecondCarousel";
 import ThirdSection from "../components/thirdCarousel/ThirdSection";
 import HealthBlogsSection from "../components/Header_carousel/header_carousel";
