@@ -43,7 +43,7 @@ const FirstSection = () => {
             id: c._key ?? `${doc._id}-${idx}`,
             title: c.title || "",
             alt: c.alt || "",
-            subtitle: c.subtitle || "",
+            subtitle: c.subTitle || "",
             image: c?.image?.asset?.url || "",
             order: c.order ?? idx,
             rating: typeof c.rating === "number" ? c.rating : undefined,

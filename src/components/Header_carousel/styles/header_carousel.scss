@@ -1,28 +1,18 @@
-$hb-bg:           #ffffff;
-$hb-pattern:      rgba(0, 0, 0, 0.04);   
-$hb-title:        #616161;               
-$hb-subtitle:     #2b5aa7;               
-$hb-accent-red:   #ff2f3d;             
-$hb-max:          1200px;
+$hb-bg: #ffffff;
+$hb-pattern: rgba(0, 0, 0, 0.04);
+$hb-title: #616161;
+$hb-subtitle: #2b5aa7;
+$hb-accent-red: #ff2f3d;
+$hb-max: 1200px;
 
 $sp-3: 1rem;
 $sp-4: 1.5rem;
 $sp-6: 3rem;
 
-@mixin subtle-diamond-pattern($color) {
-  background-color: $hb-bg;
-  background-image:
-    radial-gradient(circle at 1px 1px, $color 1px, transparent 0),
-    radial-gradient(circle at 9px 9px, $color 1px, transparent 0),
-    linear-gradient(45deg, transparent 49%, $color 50%, transparent 51%),
-    linear-gradient(-45deg, transparent 49%, $color 50%, transparent 51%);
-  background-size: 20px 20px, 20px 20px, 20px 20px, 20px 20px;
-  background-position:
-    0 0, 0 0, 0 0, 0 0;
-  opacity: 1;
-}
+
 .csBlogs {
-  @include subtle-diamond-pattern($hb-pattern);
+  background-image: url(../../../assets/Texture_Background.png);
+
 
   .hb-wrap {
     max-width: $hb-max;
@@ -42,8 +32,13 @@ $sp-6: 3rem;
     background: $hb-accent-red;
   }
 
-  .hb-accent--top    { margin-top: $sp-6; }
-  .hb-accent--bottom { margin-bottom: $sp-6; }
+  .hb-accent--top {
+    margin-top: $sp-6;
+  }
+
+  .hb-accent--bottom {
+    margin-bottom: $sp-6;
+  }
 
 
   .hb-title {
@@ -51,13 +46,13 @@ $sp-6: 3rem;
     color: $hb-title;
     font-weight: 700;
     letter-spacing: .2px;
-    font-size: clamp(1.35rem, 1.1rem + 1.2vw, 2.25rem); 
+    font-size: clamp(1.35rem, 1.1rem + 1.2vw, 2.25rem);
     line-height: 1.25;
   }
 
   .hb-subtitle {
     margin: 0;
-    color: $hb-subtitle; 
+    color: $hb-subtitle;
     font-weight: 700;
     font-size: clamp(1rem, .95rem + .35vw, 1.35rem);
     line-height: 1.25;

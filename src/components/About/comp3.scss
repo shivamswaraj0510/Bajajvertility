@@ -5,52 +5,55 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-//   margin-top: 40px;
-   background: url(https://www.parkhospital.in/public/frontend/img2/Texture_Background.png) #fefefe;
+  //   margin-top: 40px;
+  background: url(https://www.parkhospital.in/public/frontend/img2/Texture_Background.png) #fefefe;
 }
 
 .video-block {
-    
-    gap: 24px;
+
+  gap: 24px;
   margin-bottom: 40px;
   background-color: #275baa;
-//    padding: 0 52px;
+  //    padding: 0 52px;
   box-sizing: border-box;
   display: flex;
-    flex-direction: row;
-     justify-content: center;
-     align-items: center;
-    
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
 
 }
-.aboutus-comp3-container_inner{
-    padding: 0 52px;
-    width: 1280px;
-    height: 544px;
-    gap: 24px;
+
+.aboutus-comp3-container_inner {
+  padding: 0 52px;
+  width: 1280px;
+  height: 544px;
+  gap: 24px;
   margin-bottom: 40px;
   background-color: #275baa;
-//   padding: 32px;
-margin: 32px;
+  //   padding: 32px;
+  margin: 32px;
   box-sizing: border-box;
   display: flex;
-    flex-direction: column;
-     justify-content: center;
-     align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-.fixedtext{
-    // margin: 32px;
-    color: #fefefe;
-    font-size: 16px ;
-    line-height: 20px;
-    word-wrap: break-word
+
+.fixedtext {
+  // margin: 32px;
+  color: #fefefe;
+  font-size: 16px;
+  line-height: 20px;
+  word-wrap: break-word
 }
+
 .aboutus-video {
-  
+
   width: 586px;
   height: 330px;
   border-radius: 12px;
-//   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  //   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .video-description {
@@ -63,7 +66,7 @@ margin: 32px;
 }
 
 .error-text {
-  color: red;
+  color: #ef3b2d;
   text-align: center;
   font-weight: 500;
 }
