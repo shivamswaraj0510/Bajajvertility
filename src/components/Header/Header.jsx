@@ -1,5 +1,4 @@
 import "./styles/style.scss";
-import { useNavigate } from 'react-router-dom';
 import VitalityLogo from "../../assets/VitalityLogo.png";
 const Header = () => {
   return (

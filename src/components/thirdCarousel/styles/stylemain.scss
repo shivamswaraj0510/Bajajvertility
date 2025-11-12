@@ -1,5 +1,6 @@
 .third-carousel {
-    margin-top: 50px;
+    padding-top: 50px;
+    background-image: url(../../../assets/Texture_Background.png);
 
     .headings {
         width: 100%;
@@ -100,11 +101,13 @@
                 li {
                     background-color: #fd7d1491;
                     color: white;
+
                     .countBox {
                         padding: 25px 20px;
                         display: flex;
                         gap: 5px;
                         flex-direction: column;
+
                         .counter-value {
                             font-weight: 600;
                             font-size: 26px;

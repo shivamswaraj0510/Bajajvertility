@@ -1,0 +1,33 @@
+.slider-container {
+    width: 100%;
+    box-sizing: border-box;
+    padding-left: 150px;
+    padding-right: 150px;
+
+    .slick-track {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+
+        .slick-slide {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+
+
+    .slick-prev:before,
+    .slick-next:before {
+        font-family: 'slick';
+        font-size: 30px;
+        font-weight: 900;
+        line-height: 1;
+        opacity: 1;
+        color: darkblue;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+}
