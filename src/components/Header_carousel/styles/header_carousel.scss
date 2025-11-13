@@ -7,7 +7,7 @@ $hb-max: 1200px;
 
 $sp-3: 1rem;
 $sp-4: 1.5rem;
-$sp-6: 3rem;
+$sp-6: 2rem;
 
 
 .csBlogs {
@@ -20,7 +20,7 @@ $sp-6: 3rem;
     padding-inline: $sp-3;
     display: grid;
     justify-items: center;
-    row-gap: .65rem;
+    row-gap: .50rem;
     text-align: center;
   }
 

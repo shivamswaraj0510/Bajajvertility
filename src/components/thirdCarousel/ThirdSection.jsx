@@ -31,6 +31,7 @@ const ThirdSection = () => {
 
   const doc = Array.isArray(data) && data.length > 0 ? data[0] : null;
 
+
   return (
     <section className="third-carousel">
       <div className="headings">
@@ -41,12 +42,7 @@ const ThirdSection = () => {
 
       <div className="sub-heading-section">
         <p>
-          {doc?.description ||
-            `Park Group of Hospitals, situated in North India. The Group is
-          undergoing rapid expansion making in chain of super-speciality
-          hospitals including cancer and tertiary level care where patients
-          continue medical intervention and care in the state-of-the-art
-          facilities for various ailments`}
+          {doc?.description}
         </p>
       </div>
 
@@ -57,42 +53,19 @@ const ThirdSection = () => {
         />
         <div id="counter">
           <ul class="text-center">
-            <li>
-              <div class="countBox text-start px-sm-5">
-                <span class="counter-value" data-count="13">
-                  13
-                </span>
-                <span class="plus orange"></span>
-                <p>NABH Accredited Hospitals</p>
-              </div>
-            </li>
-            <li>
-              <div class="countBox text-start px-sm-5">
-                <span class="counter-value orange" data-count="3000">
-                  3000
-                </span>
-                <span class="plus orange"></span>
-                <p>Beds</p>
-              </div>
-            </li>
-            <li>
-              <div class="countBox text-start px-sm-5">
-                <span class="counter-value orange" data-count="890">
-                  890
-                  <span class="plus orange">+</span>
-                </span>
-                <p> Dedicated team of Doctors</p>
-              </div>
-            </li>
-            <li>
-              <div class="countBox text-start px-sm-5">
-                <span class="counter-value orange" data-count="30">
-                  30
-                </span>
-                <span class="plus orange"></span>
-                <p>Speciality</p>
-              </div>
-            </li>
+            {
+              data[0]?.stats.map((stat, index) => (
+                <li key={index}>
+                  <div class="countBox text-start px-sm-5">
+                    <span class="counter-value orange" data-count={stat.value}>
+                      {stat.value}
+                    </span>
+                    <span class="plus orange"></span>
+                    <p>{stat.label}</p>
+                  </div>
+                </li>
+              ))
+            }
           </ul>
         </div>
       </div>
