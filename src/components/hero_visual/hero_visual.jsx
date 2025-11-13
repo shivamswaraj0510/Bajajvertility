@@ -10,7 +10,7 @@ import React, { useEffect, useRef, useState } from "react";
 
 const IMAGE_URLS = [
   // 1) Drugstore illustration
-  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCWQ90dv7YIyKmPpkMjkw1ZHwuIiqs4suoBA&s",
+  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvmQ2uH0qNfW5AuYMpS7DgOEwe-p_DsrPcYw&s",
   // 2) Assorted pills close-up
   "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZcpCBBpyRNj9JwV7eglho5_8IuDUUumvRqw&s",
   // 3) Pharmacy counter illustration
