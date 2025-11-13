@@ -70,13 +70,15 @@
 
 // export default Header;
 import "./styles/style.scss";
-import VitalityLogo from "../../assets/main_logo.png";
+import VitalityLogo from "../../assets/new_logo.png";
 
 const Header = () => {
   return (
     <header className="header">
       <div className="header-left">
-        <img src={VitalityLogo} alt="Bajaj Vitality" />
+        <a href="/">
+          <img src={VitalityLogo} alt="Bajaj Vitality" />
+        </a>
       </div>
 
       <div className="header-right">
