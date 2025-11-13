@@ -6,6 +6,10 @@ body {
     scrollbar-width: none;
 }
 
-.root {
-    background-image: url(../../../assets/Texture_Background.png);
+body {
+    background-image: url(./assets/Texture_Background.png);
+}
+
+p {
+    background: transparent;
 }
