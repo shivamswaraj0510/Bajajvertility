@@ -33,15 +33,7 @@ const AboutusComp3 = () => {
       <div className="aboutus-comp3-container_inner">
         <div>
           <p className="fixedtext">
-            Our founder and Chairman, Dr. Ajit Gupta started his professional
-            journey in 1981 and established a clinic in South Delhi, India. The
-            purpose of the clinic was to deliver high-quality, accessible and
-            affordable healthcare to people. In January 2005, Dr. Ajit Gupta
-            established the Park Hospital in West Delhi, which was subsequently
-            transferred to our Company in 2011. We adopted a cluster-based
-            approach to grow our network of hospitals, leveraging the benefits
-            of proximity between our hospitals, leading to operational
-            efficiencies and enabling us to benefit from economies of scale.
+            Bajaj Vitality, a visionary healthcare initiative by the Bajaj Group, was launched to transform the Indian medical landscape by offering high-quality, affordable, and accessible healthcare. Backed by a ₹10,000 crore investment, the company is building a nationwide network of hospitals, especially in tier-two and tier-three cities, using a cluster-based model to ensure operational efficiency and economies of scale. Integrating digital platforms like Bajaj Finserv Health and Bajaj Allianz, Bajaj Vitality aims to deliver seamless care through telemedicine, diagnostics, and pharmacy services—making ethical, inclusive, and future-ready healthcare a reality for millions.
           </p>
         </div>
 

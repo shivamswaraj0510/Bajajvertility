@@ -1,40 +1,44 @@
-.aboutuscomp2-main{
+.aboutuscomp2-main {
     width: 100vw;
     height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap:25px;
+    gap: 5px;
     padding-top: 60px;
     padding-bottom: 60px;
-    background: url(https://www.parkhospital.in/public/frontend/img2/Texture_Background.png) #fefefe;
+    background: url(../../assets/Texture_Background.png) #fefefe;
 
 }
-.aboutuscomp2-blank1{
+
+.aboutuscomp2-blank1 {
     width: 50px;
     height: 4px;
     border-radius: 8px;
     background-color: #ff6600;
 }
-.aboutuscomp2-blank2{
+
+.aboutuscomp2-blank2 {
     width: 50px;
     height: 4px;
     border-radius: 8px;
     background-color: #ff6600;
 }
-.aboutuscomp2-h1{
-            font-size: 1.4rem;
-            color: #727270;
-            margin-top: 0;
+
+.aboutuscomp2-h1 {
+    font-size: 1.4rem;
+    color: #727270;
+    margin-top: 0;
     margin-bottom: .5rem;
     font-weight: 500;
     line-height: 1.2;
 }
-.aboutuscomp2-h2{
-            font-size: 2rem;
-            color: #225398;
-            margin-top: 0;
+
+.aboutuscomp2-h2 {
+    font-size: 2rem;
+    color: #225398;
+    margin-top: 0;
     margin-bottom: .5rem;
     font-weight: 500;
     line-height: 1.2;
