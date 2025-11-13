@@ -1,9 +1,9 @@
 .footer {
-  background: #3A5EA8; // same as header
+  background: #275aaa; // same as header
   color: #ffffff; // all text white
   padding: 40px 0;
   font-family: "Rubik", sans-serif;
-  border-top: 2px solid #FF5500; // clean white divider line
+  border-top: 2px solid #FF5500; // orange divider line
   border-radius: 0;
 
   .footer-container {
@@ -27,7 +27,7 @@
       font-size: 16px;
       font-weight: 600;
       margin-bottom: 15px;
-      color: #ffffff; // heading white
+      color: #ffffff;
     }
 
     ul {
@@ -37,17 +37,35 @@
 
       li {
         margin-bottom: 8px;
-        transition: transform 0.2s ease;
+        position: relative;
 
         a {
           text-decoration: none;
-          color: #ffffff; // link white
+          color: #ffffff;
           font-size: 14px;
-          transition: opacity 0.3s ease, transform 0.3s ease;
+          position: relative;
+          display: inline-block;
+          padding-bottom: 2px;
+          transition: color 0.3s ease;
+
+          // create the animated underline
+          &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 2px;
+            background: #FF5500; // orange underline
+            transition: width 0.3s ease;
+          }
 
           &:hover {
-            opacity: 0.8; // subtle fade effect on hover
-            transform: translateX(4px);
+            color: #ffffff;
+          }
+
+          &:hover::after {
+            width: 100%; // underline expands left to right
           }
         }
       }
