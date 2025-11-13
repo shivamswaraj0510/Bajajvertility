@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import ExcCardCarousel from "./ExcCardCarousel";
 import "./styles/stylemain.scss";
 import { client } from "../../lib/sanity";
+import RoundedCardSlider from "./roundedCardSlider";
 
 const querry = `
 *[_type == "excCardCarousel"]{
@@ -17,16 +17,7 @@ const querry = `
     _key,
     subtitle,
     order,
-    image{
-      asset->{
-        url,
-        metadata {
-          dimensions,
-          mimeType,
-          lqip
-        }
-      }
-    }
+    "imageUrl":image.asset->url,
   }
 }`;
 const SecondCarousel = () => {
@@ -55,9 +46,10 @@ const SecondCarousel = () => {
           {data?.subheading || "The Park Flag-bearers"}
         </h3>
       </div>
-      {data && (
-        <ExcCardCarousel items={data.cards} visible={data.visible ?? 4} />
-      )}
+      {
+        data &&
+        <RoundedCardSlider items={data.cards} />
+      }
       <div className="btn">
         <a href={data?.cta?.href || "#"}>{data?.cta?.label || "view more"}</a>
       </div>

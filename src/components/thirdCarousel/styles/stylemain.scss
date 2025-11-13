@@ -1,5 +1,6 @@
 .third-carousel {
-    margin-top: 50px;
+    padding-top: 50px;
+    background-image: url(../../../assets/Texture_Background.png);
 
     .headings {
         width: 100%;
@@ -10,7 +11,7 @@
 
         .heading {
             color: #225398;
-            font-size: 24px;
+            font-size: 28px;
         }
 
         .sub-heading {
@@ -25,6 +26,7 @@
         text-align: center;
         margin-top: 20px;
         margin-bottom: 20px;
+        padding-inline: 90px;
 
         p {
             color: #727270;
@@ -43,7 +45,7 @@
         content: "";
         width: 60px;
         height: 4px;
-        background-color: red;
+        background-color: #ef3b2d;
         margin-top: 10px;
         display: block;
         margin-left: auto;
@@ -54,7 +56,7 @@
         content: "";
         width: 60px;
         height: 4px;
-        background-color: red;
+        background-color: #ef3b2d;
         margin-bottom: 10px;
         display: block;
         margin-left: auto;
@@ -69,7 +71,7 @@
         align-items: center;
 
         >a {
-            background-color: red;
+            background-color: #ef3b2d;
             border: none;
             padding: 10px 20px;
             border-radius: 5px;
@@ -100,11 +102,13 @@
                 li {
                     background-color: #fd7d1491;
                     color: white;
+
                     .countBox {
                         padding: 25px 20px;
                         display: flex;
                         gap: 5px;
                         flex-direction: column;
+
                         .counter-value {
                             font-weight: 600;
                             font-size: 26px;

@@ -1,20 +1,20 @@
 import Header from "../components/Header/Header";
 import Hpcarousel from "../components/hpcarousel/hpcarousel";
 import SearchForm from "../components/SearchForm/SearchForm";
-import FirstCarousel from "../components/FirstCarousel/FirstCarousel";
 import SecondCarousel from "../components/secondCarousel/SecondCarousel";
 import ThirdSection from "../components/thirdCarousel/ThirdSection";
 import HealthBlogsSection from "../components/Header_carousel/header_carousel";
 import UpdatesCarousel2 from "../components/carousel/carousel";
 import Footer from "../components/Footer/footer";
 import ParkFacilities from "../components/parkFacilities/parkFacilities";
+import FirstSection from "../components/FirstSection/firstSection";
 const Home = () => {
   return (
     <div>
       <Header />
       <Hpcarousel />
       <SearchForm />
-      <FirstCarousel />
+      <FirstSection />
       <SecondCarousel />
       <ThirdSection />
       <HealthBlogsSection id="198c471e-2897-44ee-8ac8-5f95d209f675" />

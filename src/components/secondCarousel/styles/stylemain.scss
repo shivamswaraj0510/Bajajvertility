@@ -1,5 +1,6 @@
 .second-carousel {
-    margin-top: 50px;
+    padding-top: 50px;
+    background-image: url(../../../assets/Texture_Background.png);
 
     .headings {
         width: 100%;
@@ -10,7 +11,7 @@
 
         .heading {
             color: #225398;
-            font-size: 24px;
+            font-size: 28px;
 
         }
 
@@ -26,7 +27,7 @@
         content: "";
         width: 60px;
         height: 4px;
-        background-color: red;
+        background-color: #ef3b2d;
         margin-top: 10px;
         display: block;
         margin-left: auto;
@@ -37,7 +38,7 @@
         content: "";
         width: 60px;
         height: 4px;
-        background-color: red;
+        background-color: #ef3b2d;
         margin-bottom: 10px;
         display: block;
         margin-left: auto;
@@ -45,14 +46,14 @@
     }
 
     .btn {
-        margin-top: 20px;
-        margin-bottom: 20px;
+        padding-top: 20px;
+        padding-bottom: 20px;
         display: flex;
         justify-content: center;
         align-items: center;
 
         >a {
-            background-color: red;
+            background-color: #ef3b2d;
             border: none;
             padding: 10px 20px;
             border-radius: 5px;

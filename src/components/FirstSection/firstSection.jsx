@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import CardCarousel from "./cardCarousel";
-import "./styles/stylemain.scss";
+import "./styles/section.scss";
 import { client } from "../../lib/sanity";
+import SimpleSlider from "./SimpleSlider";
 
 const query = `*[_type == "cardCarousel"]{
   _id,
@@ -23,7 +23,7 @@ subheading,
   }
 }`;
 
-const FirstCarousel = () => {
+const FirstSection = () => {
   const [items, setItems] = useState([]);
   const [sectionData, setSectionData] = useState([]);
 
@@ -43,7 +43,7 @@ const FirstCarousel = () => {
             id: c._key ?? `${doc._id}-${idx}`,
             title: c.title || "",
             alt: c.alt || "",
-            subtitle: c.subtitle || "",
+            subtitle: c.subTitle || "",
             image: c?.image?.asset?.url || "",
             order: c.order ?? idx,
             rating: typeof c.rating === "number" ? c.rating : undefined,
@@ -71,9 +71,11 @@ const FirstCarousel = () => {
         <p>{sectionData.description}</p>
         <h3>{sectionData.subHeading}</h3>
       </div>
-      <CardCarousel items={items} />
+      {items &&
+        <SimpleSlider items={items} />
+      }
     </section>
   );
 };
 
-export default FirstCarousel;
+export default FirstSection;
