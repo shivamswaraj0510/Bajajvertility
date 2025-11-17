@@ -1,7 +1,6 @@
-// Park Hospital brand palette (from Brandfetch)
-$color-orange: #3A5EA8; // Primary CTA (Jaffa)  [2](https://brandfetch.com/parkhospital.in)
-$color-blue: #3A5EA8; // Secondary accent (Danube)  [2](https://brandfetch.com/parkhospital.in)
-$color-blue-deep: #000000; // Headings/links (Matisse)  [2](https://brandfetch.com/parkhospital.in)
+$color-orange: #3A5EA8; 
+$color-blue: #3A5EA8; 
+$color-blue-deep: #000000; 
 
 $color-bg: #ffffff;
 $color-text: #1f2a37;
@@ -12,7 +11,7 @@ $color-card: #ffffff;
 $shadow-soft: 0 6px 18px rgba(27, 93, 151, 0.12);
 $radius: 14px;
 $radius-sm: 10px;
-$container: 1160px; // similar max width impression to Park sections  [1](https://www.parkhospital.in/)
+$container: 1160px; 
 
 $font-base: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 $font-heading: $font-base;
@@ -71,7 +70,7 @@ $z-sticky: 900;
   color: $color-text;
   background: $color-bg;
 
-  // Breadcrumb (matches Park’s clean, simple crumb trail)
+  
   &__breadcrumb {
     @include container;
     padding: 16px 0;
@@ -153,7 +152,7 @@ $z-sticky: 900;
     }
   }
 
-  // Search bar (inline like Park’s clean CTAs)
+ 
   &__search {
     @include container;
     margin: 16px auto 8px;

@@ -41,9 +41,9 @@ const SecondCarousel = () => {
   return (
     <section className="second-carousel">
       <div className="headings">
-        <h2 className="heading">{data?.heading || "Center Of Excellence"}</h2>
+        <h2 className="heading">{data?.heading}</h2>
         <h3 className="sub-heading">
-          {data?.subheading || "The Park Flag-bearers"}
+          {data?.subheading}
         </h3>
       </div>
       {
