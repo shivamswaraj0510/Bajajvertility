@@ -1,7 +1,7 @@
 // Park Hospital brand palette (from Brandfetch)
-$color-orange: #F47435; // Primary CTA (Jaffa)  [2](https://brandfetch.com/parkhospital.in)
-$color-blue:   #558DC8; // Secondary accent (Danube)  [2](https://brandfetch.com/parkhospital.in)
-$color-blue-deep: #1B5D97; // Headings/links (Matisse)  [2](https://brandfetch.com/parkhospital.in)
+$color-orange: #3A5EA8; // Primary CTA (Jaffa)  [2](https://brandfetch.com/parkhospital.in)
+$color-blue: #3A5EA8; // Secondary accent (Danube)  [2](https://brandfetch.com/parkhospital.in)
+$color-blue-deep: #000000; // Headings/links (Matisse)  [2](https://brandfetch.com/parkhospital.in)
 
 $color-bg: #ffffff;
 $color-text: #1f2a37;
@@ -41,7 +41,11 @@ $z-sticky: 900;
   font-weight: 600;
   text-decoration: none;
   transition: filter .15s ease, transform .15s ease;
-  &:hover { filter: brightness(1.05); transform: translateY(-1px); }
+
+  &:hover {
+    filter: brightness(1.05);
+    transform: translateY(-1px);
+  }
 }
 
 @mixin card {
@@ -56,8 +60,10 @@ $z-sticky: 900;
   align-items: center;
   padding: 6px 10px;
   border-radius: 999px;
-  background: $bg; color: $fg;
-  font-size: 12px; font-weight: 600;
+  background: $bg;
+  color: $fg;
+  font-size: 12px;
+  font-weight: 600;
 }
 
 .buy-med {
@@ -70,31 +76,80 @@ $z-sticky: 900;
     @include container;
     padding: 16px 0;
     font-size: 14px;
-    a { color: $color-blue-deep; text-decoration: none; }
-    .sep { margin: 0 8px; color: $color-muted; }
-    .current { color: $color-muted; }
+
+    a {
+      color: $color-blue-deep;
+      text-decoration: none;
+    }
+
+    .sep {
+      margin: 0 8px;
+      color: $color-muted;
+    }
+
+    .current {
+      color: $color-muted;
+    }
   }
 
   // Hero (calm, clinical; blue-toned with orange CTA)
   &__hero {
-    margin-top: 124px;
+    margin-top: 100px;
     background: linear-gradient(180deg, rgba(85, 141, 200, 0.08), rgba(85, 141, 200, 0));
     border-top: 1px solid $color-border;
     border-bottom: 1px solid $color-border;
 
-    .wrap { @include container; display: grid; grid-template-columns: 1.1fr .9fr; gap: 28px; align-items: center; padding: 28px 0; }
-    .copy {
-      h1 { font-family: $font-heading; font-size: 32px; color: $color-blue-deep; margin: 0 0 10px; }
-      p { color: $color-muted; margin: 0 0 14px; max-width: 640px; }
-      .actions { display: flex; gap: 12px; flex-wrap: wrap; margin: 12px 0; }
-      .btn-primary { @include btn($color-orange); }
-      .btn-secondary { @include btn($color-blue); }
-      .assurances { display: flex; gap: 12px; flex-wrap: wrap; margin: 10px 0 0; color: $color-muted; }
+    .wrap {
+      @include container;
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 28px;
+      align-items: center;
+      padding: 28px 0;
     }
+
+    .copy {
+      h1 {
+        font-family: $font-heading;
+        font-size: 32px;
+        color: $color-blue-deep;
+        margin: 0 0 10px;
+      }
+
+      p {
+        color: $color-muted;
+        margin: 0 0 14px;
+        max-width: 640px;
+      }
+
+      .actions {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin: 12px 0;
+      }
+
+      .btn-primary {
+        @include btn($color-orange);
+      }
+
+      .btn-secondary {
+        @include btn($color-blue);
+      }
+
+      .assurances {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin: 10px 0 0;
+        color: $color-muted;
+      }
+    }
+
     .visual {
       @include card;
       min-height: 280px;
-      background: linear-gradient(135deg, rgba(85,141,200,.12), rgba(244,116,53,.12));
+      background: linear-gradient(135deg, rgba(85, 141, 200, .12), rgba(244, 116, 53, .12));
     }
   }
 
@@ -102,34 +157,87 @@ $z-sticky: 900;
   &__search {
     @include container;
     margin: 16px auto 8px;
+
     .bar {
-      display: flex; gap: 10px;
-      @include card; padding: 8px;
+      display: flex;
+      gap: 10px;
+      @include card;
+      padding: 8px;
+
       input {
-        flex: 1; border: 0; outline: none; padding: 12px 14px; border-radius: $radius-sm;
+        flex: 1;
+        border: 0;
+        outline: none;
+        padding: 12px 14px;
+        border-radius: $radius-sm;
       }
-      .btn-find { @include btn($color-blue); }
+
+      .btn-find {
+        @include btn($color-blue);
+      }
     }
   }
 
   // Categories (rounded cards, subtle border, similar to Centres of Excellence)
   &__cats {
     padding: 24px 0;
-    .head { @include container; display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px;
-      h2 { font-size: 22px; color: $color-blue-deep; margin: 0; }
-      a { color: $color-blue-deep; text-decoration: none; }
+
+    .head {
+      @include container;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+
+      h2 {
+        font-size: 22px;
+        color: $color-blue-deep;
+        margin: 0;
+      }
+
+      a {
+        color: $color-blue-deep;
+        text-decoration: none;
+      }
     }
-    .grid { @include container; display: grid; grid-template-columns: repeat(6, 1fr); gap: 16px; }
+
+    .grid {
+      @include container;
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 16px;
+    }
   }
 
   // Products grid (rounded, tidy price block)
   &__products {
     padding: 14px 0 24px;
-    .head { @include container; display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px;
-      h2 { font-size: 22px; color: $color-blue-deep; margin: 0; }
-      a { color: $color-blue-deep; text-decoration: none; }
+
+    .head {
+      @include container;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+
+      h2 {
+        font-size: 22px;
+        color: $color-blue-deep;
+        margin: 0;
+      }
+
+      a {
+        color: $color-blue-deep;
+        text-decoration: none;
+      }
     }
-    .grid { @include container; display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+
+    .grid {
+      @include container;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
   }
 
   // Prescription flow (Upload → Verify → Deliver)
@@ -137,87 +245,226 @@ $z-sticky: 900;
     @include container;
     @include card;
     margin: 18px auto;
-    padding: 18px;
-    h2 { font-size: 22px; color: $color-blue-deep; margin: 0 0 10px; }
+    padding: 32px;
+    margin-bottom: 20px;
+
+    h2 {
+      font-size: 22px;
+      color: $color-blue-deep;
+      margin: 0 0 10px;
+    }
 
     .steps {
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 12px 0;
-      .step { @include card; padding: 16px; position: relative;
-        .num { @include pill(rgba(85,141,200,.15), $color-blue-deep); position: absolute; top: 12px; right: 12px; }
-        h3 { margin: 0 0 6px; font-size: 16px; color: $color-blue-deep; }
-        p { margin: 0; color: $color-muted; }
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin: 12px 0;
+
+      .step {
+        @include card;
+        padding: 16px;
+        position: relative;
+
+        .num {
+          @include pill(rgba(85, 141, 200, .15), $color-blue-deep);
+          position: absolute;
+          top: 12px;
+          right: 12px;
+        }
+
+        h3 {
+          margin: 0 0 6px;
+          font-size: 16px;
+          color: $color-blue-deep;
+        }
+
+        p {
+          margin: 0;
+          color: $color-muted;
+        }
       }
     }
-    .rx-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 8px; }
-    .btn-upload { @include btn($color-orange); }
-    .btn-help { @include btn($color-blue); }
+
+    .rx-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 8px;
+    }
+
+    .btn-upload {
+      @include btn($color-orange);
+    }
+
+    .btn-help {
+      @include btn($color-blue);
+    }
   }
 
   // Trust bar
   &__trust {
-    border-top: 1px solid $color-border; border-bottom: 1px solid $color-border;
-    .inner { @include container; display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; text-align: center; padding: 12px 0; color: $color-muted; }
+    margin-top: 56px;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    border-top: 1px solid $color-border;
+    border-bottom: 1px solid $color-border;
+
+    .inner {
+      @include container;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      text-align: center;
+      padding: 12px 0;
+      color: $color-muted;
+    }
   }
 
   // Responsive
   @media (max-width: 1024px) {
-    &__hero .wrap { grid-template-columns: 1fr; }
-    &__cats .grid { grid-template-columns: repeat(3, 1fr); }
-    &__products .grid { grid-template-columns: repeat(2, 1fr); }
-    &__rx .steps { grid-template-columns: 1fr; }
-    &__trust .inner { grid-template-columns: 1fr 1fr; }
+    &__hero .wrap {
+      grid-template-columns: 1fr;
+    }
+
+    &__cats .grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    &__products .grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    &__rx .steps {
+      grid-template-columns: 1fr;
+    }
+
+    &__trust .inner {
+      grid-template-columns: 1fr 1fr;
+    }
   }
 
   @media (max-width: 640px) {
-    &__cats .grid, &__products .grid { grid-template-columns: 1fr; }
+
+    &__cats .grid,
+    &__products .grid {
+      grid-template-columns: 1fr;
+    }
   }
 }
 
 /* Component blocks */
 .breadcrumb {
-  &__list { display: flex; align-items: center; flex-wrap: wrap; }
+  &__list {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
 }
 
 .category-card {
   @include card;
-  display: flex; flex-direction: column; gap: 6px; padding: 16px; text-decoration: none; color: $color-text;
-  &__icon { font-size: 24px; }
-  &__title { margin: 6px 0 2px; color: $color-blue-deep; font-weight: 700; }
-  &__desc { margin: 0; color: $color-muted; font-size: 14px; }
-  &:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(27, 93, 151, 0.18); }
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 16px;
+  text-decoration: none;
+  color: $color-text;
+
+  &__icon {
+    font-size: 24px;
+  }
+
+  &__title {
+    margin: 6px 0 2px;
+    color: $color-blue-deep;
+    font-weight: 700;
+  }
+
+  &__desc {
+    margin: 0;
+    color: $color-muted;
+    font-size: 14px;
+  }
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(27, 93, 151, 0.18);
+  }
 }
 
 .product-card {
   @include card;
-  position: relative; padding: 16px;
-  &__img { height: 110px; border-radius: $radius-sm; margin-bottom: 8px;
-    background: linear-gradient(135deg, rgba(85,141,200,.14), rgba(244,116,53,.14));
+  position: relative;
+  padding: 16px;
+
+  &__img {
+    height: 110px;
+    border-radius: $radius-sm;
+    margin-bottom: 8px;
+    background: linear-gradient(135deg, rgba(85, 141, 200, .14), rgba(244, 116, 53, .14));
     border: 1px solid $color-border;
     width: 100%;
   }
-  &__badge { @include pill(rgba(244,116,53,.16), $color-orange); position: absolute; top: 12px; left: 12px; }
-  &__title { margin: 6px 0 2px; font-weight: 700; color: $color-text; }
-  &__salt { margin: 0; color: $color-muted; font-size: 13px; }
-  &__price { display: flex; align-items: center; gap: 8px; margin: 8px 0 12px; }
-  &__mrp { text-decoration: line-through; color: #8896aa; }
-  &__sale { color: $color-orange; font-weight: 700; }
-  &__btn { @include btn($color-orange); width: 100%; }
+
+  &__badge {
+    @include pill(rgba(244, 116, 53, .16), $color-orange);
+    position: absolute;
+    top: 12px;
+    left: 12px;
+  }
+
+  &__title {
+    margin: 6px 0 2px;
+    font-weight: 700;
+    color: $color-text;
+  }
+
+  &__salt {
+    margin: 0;
+    color: $color-muted;
+    font-size: 13px;
+  }
+
+  &__price {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 8px 0 12px;
+  }
+
+  &__mrp {
+    text-decoration: line-through;
+    color: #8896aa;
+  }
+
+  &__sale {
+    color: $color-orange;
+    font-weight: 700;
+  }
+
+  &__btn {
+    @include btn($color-orange);
+    width: 100%;
+  }
 }
 
 .buy-med__hero {
   .visual {
     position: relative;
     border-radius: 14px;
-    min-height: 280px; /* keep identical height */
+    min-height: 280px;
+    /* keep identical height */
     overflow: hidden;
-    background: linear-gradient(135deg, rgba(85,141,200,.10), rgba(244,116,53,.08));
-    border: 1px solid rgba(27,93,151,.12);
-    box-shadow: 0 12px 28px rgba(27,93,151,.12);
+    background: linear-gradient(135deg, rgba(85, 141, 200, .10), rgba(244, 116, 53, .08));
+    border: 1px solid rgba(27, 93, 151, .12);
+    box-shadow: 0 12px 28px rgba(27, 93, 151, .12);
+
     /* soft glow */
     &::before {
       content: "";
-      position: absolute; inset: 0;
-      background: radial-gradient(60% 50% at 18% 20%, rgba(255,255,255,.65), transparent 60%);
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(60% 50% at 18% 20%, rgba(255, 255, 255, .65), transparent 60%);
       filter: blur(10px);
       pointer-events: none;
       z-index: 0;
@@ -225,34 +472,52 @@ $z-sticky: 900;
   }
 
   .visual__carousel {
-    position: absolute; inset: 0;
-    z-index: 1; /* above glow */
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    /* above glow */
   }
 
   .visual__slide {
-    position: absolute; inset: 0;
-    display: grid; place-items: center;
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
     opacity: 0;
     transform: translateY(6px) scale(.98);
     transition: opacity var(--fade, 600ms) ease, transform var(--fade, 600ms) ease;
-    &.is-active { opacity: 1; transform: translateY(0) scale(1); }
+
+    &.is-active {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
   }
 
   .visual__img {
     width: 100%;
     max-width: 640px;
     height: 100%;
-    object-fit: contain; /* consistent sizing across all images */
-    filter: drop-shadow(0 10px 22px rgba(27,93,151,.10));
+    object-fit: contain;
+    /* consistent sizing across all images */
+    filter: drop-shadow(0 10px 22px rgba(27, 93, 151, .10));
     animation: floatY 7.5s ease-in-out infinite;
   }
 
   @keyframes floatY {
-    0%, 100% { transform: translateY(0) }
-    50%      { transform: translateY(-6px) }
+
+    0%,
+    100% {
+      transform: translateY(0)
+    }
+
+    50% {
+      transform: translateY(-6px)
+    }
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .visual__img { animation: none; }
+    .visual__img {
+      animation: none;
+    }
   }
 }

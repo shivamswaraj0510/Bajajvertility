@@ -1,11 +1,10 @@
 .footer {
-  background: #275aaa; // same as header
-  color: #ffffff; // all text white
+  background: #275aaa; 
+  color: #ffffff; 
   padding: 40px 0;
   font-family: "Rubik", sans-serif;
-  border-top: 2px solid #FF5500; // orange divider line
+  border-top: 2px solid #FF5500; 
   border-radius: 0;
-
   .footer-container {
     max-width: 1200px;
     margin: 0 auto;
@@ -48,7 +47,7 @@
           padding-bottom: 2px;
           transition: color 0.3s ease;
 
-          // create the animated underline
+        
           &::after {
             content: "";
             position: absolute;
@@ -56,7 +55,7 @@
             bottom: 0;
             width: 0;
             height: 2px;
-            background: #FF5500; // orange underline
+            background: #FF5500; 
             transition: width 0.3s ease;
           }
 
@@ -65,7 +64,7 @@
           }
 
           &:hover::after {
-            width: 100%; // underline expands left to right
+            width: 100%; 
           }
         }
       }
