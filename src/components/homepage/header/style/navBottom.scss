@@ -1,0 +1,171 @@
+.nav-bottom-container {
+    width: 100%;
+    background-color: #000000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 66px;
+
+    .nav-bottom {
+        width: 1140px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .nav-bottom-left {
+            width: 120px;
+
+            >img {
+                width: 100%;
+            }
+        }
+
+        .nav-bottom-center {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .navlist {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 30px;
+
+                .navlist-item {
+                    list-style: none;
+
+                    a {
+                        text-decoration: none;
+                        color: #ffffff;
+                        font-size: 14px;
+                        font-weight: 500;
+
+                        &:hover {
+                            color: #b0b0ad;
+                        }
+
+                        >img {
+                            margin-left: 5px;
+                            transition: rotate 0.5s ease-in-out;
+                            width: 10px;
+                            height: 10px;
+                        }
+                    }
+                }
+
+                .dropdown {
+                    position: relative;
+
+                    .navlist-dropdown {
+                        border-radius: 8px;
+                        transition: visibility 0.7s ease-out;
+                        padding: 20px;
+                        visibility: hidden;
+                        background-color: #000000;
+                        position: absolute;
+                        list-style: none;
+                        top: 15px;
+
+                        .navlist-dropdown-item {
+                            margin-bottom: 5px;
+
+                            a {
+                                text-wrap-mode: nowrap;
+                                width: max-content;
+                                text-decoration: none;
+                                color: #ffffff;
+                                font-size: 14px;
+                                font-weight: 400;
+                            }
+                        }
+                    }
+
+                    &:hover {
+                        a>img {
+                            transform: rotate(180deg);
+                        }
+
+                        .navlist-dropdown {
+                            visibility: visible;
+                        }
+                    }
+                }
+            }
+        }
+
+        .nav-bottom-right {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            width: 360px;
+
+            .open-schedule {
+                width: 190px;
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                gap: 10px;
+                border-right: 1px solid #fff;
+                padding-right: 10px;
+
+                >img {
+                    width: 20px;
+                    height: 20px;
+                }
+
+                .open-schedule-content {
+                    width: 186px;
+                    color: #ffffff;
+                    display: flex;
+                    align-items: center;
+                    flex-direction: column;
+                    justify-content: flex-start;
+                    gap: 5px;
+
+                    .open-schedule-timeline {
+                        width: 100%;
+                        text-align: left;
+                        font-weight: 500;
+                        font-size: 12px;
+                        line-height: 22px;
+                        letter-spacing: 1%;
+                        text-transform: capitalize;
+                    }
+
+                    .open-schedule-text {
+                        width: 100%;
+                        text-align: left;
+                        font-size: 18px;
+                        font-weight: 200;
+                    }
+                }
+            }
+
+            .book-appoinment {
+                width: 170px;
+
+                >a {
+                    transition: all 0.5s ease-in-out;
+                    border: 1px solid #fff;
+                    width: 100%;
+                    height: 100%;
+                    text-decoration: none;
+                    color: #000000;
+                    padding: 10px 16px;
+                    color: #fff;
+                    border-radius: 30px;
+                    font-size: 14px;
+                    font-weight: 600;
+                    text-align: center;
+                    display: inline-block;
+
+                    &:hover {
+                        background-color: #ffffff;
+                        color: #000000;
+                    }
+                }
+            }
+        }
+    }
+}
