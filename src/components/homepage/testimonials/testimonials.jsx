@@ -1,6 +1,6 @@
 import "./styles/testimonials.scss";
 import { client } from "../../../lib/sanity";
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -21,13 +21,20 @@ const query = `*[_type == "testimonials"][0]{
 }`
 export default function Testimonials() {
     const [items, setItems] = useState(null);
-    useState(() => {
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
+
+    useEffect(() => {
         const fetchData = async () => {
             try {
+                setLoading(true);
                 const response = await client.fetch(query);
                 setItems(response);
             } catch (error) {
+                setError("Failed to load testimonials. Please try again later.");
                 console.error("Error fetching data:", error);
+            } finally {
+                setLoading(false);
             }
         }
         fetchData();
@@ -42,6 +49,26 @@ export default function Testimonials() {
         slidesToScroll: 1,
     };
 
+    if (loading) {
+        return (
+            <section className="testimonials">
+                <div className="testimonials-container">
+                    <p>Loading testimonials...</p>
+                </div>
+            </section>
+        );
+    }
+
+    if (error) {
+        return (
+            <section className="testimonials">
+                <div className="testimonials-container">
+                    <p className="error-message">{error}</p>
+                </div>
+            </section>
+        );
+    }
+
     return (
         <section className="testimonials">
             <div className="testimonials-container">
@@ -54,7 +81,7 @@ export default function Testimonials() {
                     <p className="testimonials-para">{items?.description}</p>
                 </div>
                 <Slider {...settings}>
-                    {items?.cards.map((item, index) => (
+                    {items?.cards?.map((item, index) => (
                         <TestimonialCard data={item} key={index} />
                     ))}
                 </Slider>

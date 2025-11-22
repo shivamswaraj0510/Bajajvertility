@@ -22,18 +22,49 @@ const query = `*[_type == "herocomponent"][0]{
 }`
 export default function HeroComponent() {
     const [data, setData] = useState(null);
+    const [loading, setLoading] = useState(true);
+    const [imageLoaded, setImageLoaded] = useState(false);
     const backgroundImage = data ? `url(${data.heroImageUrl})` : "none";
+    
     useEffect(() => {
         const fetchData = async () => {
             try {
                 const response = await client.fetch(query);
                 setData(response);
+                
+                if (response?.heroImageUrl) {
+                    const img = new Image();
+                    img.onload = () => {
+                        setImageLoaded(true);
+                        setLoading(false);
+                    };
+                    img.onerror = () => {
+                        setLoading(false);
+                    };
+                    img.src = response.heroImageUrl;
+                } else {
+                    setLoading(false);
+                }
             } catch (error) {
                 console.error("Error fetching data:", error);
+                setLoading(false);
             }
         }
         fetchData();
     }, [])
+    if (loading || !imageLoaded) {
+        return (
+            <section className="hero-component">
+                <div className="hero-component-container">
+                    <div className="loading-container">
+                        <div className="spinner"></div>
+                        <p className="loading-text">Loading...</p>
+                    </div>
+                </div>
+            </section>
+        );
+    }
+
     return (
         <section className="hero-component" style={{ backgroundImage }}>
             <div className="hero-component-container">
