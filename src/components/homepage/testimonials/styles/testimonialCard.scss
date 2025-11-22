@@ -1,0 +1,81 @@
+.testimonial-card {
+    width: 304px;
+    height: auto;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    transition: all 0.4s ease-in-out;
+
+    &:hover {
+        scale: calc(1.01);
+
+        .testimonial-card-footer {
+            margin-left: 5px;
+            scale: calc(1.02);
+        }
+    }
+
+    .testimonial-card-header {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 4px;
+        height: 86px;
+
+        .profile-image {
+            width: 86px;
+            height: 86px;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+
+        .reviewer-details {
+            width: 160px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            .reviewer-name {
+                font-weight: 700;
+                font-size: 18px;
+                line-height: 22px;
+            }
+
+            .reviewer-location {
+                font-weight: 400;
+                font-size: 12px;
+                line-height: 16px;
+                color: #FFFFFF;
+            }
+        }
+
+        .quotes {
+            width: 48px;
+            height: 48px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+    }
+
+    .testimonial-card-body {
+        font-weight: 300;
+        font-size: 12px;
+        line-height: 16px;
+        color: #FFFFFF;
+    }
+
+    .testimonial-card-footer {
+        transition: all 0.6s ease-in-out;
+        display: flex;
+        gap: 4px;
+
+        .star-icon {
+            width: 14px;
+            height: 14px;
+        }
+    }
+
+}
