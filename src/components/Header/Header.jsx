@@ -1,12 +1,12 @@
 import "./styles/style.scss";
-import VitalityLogo from "../../assets/new_logo.png";
+
 
 const Header = () => {
   return (
     <header className="header">
       <div className="header-left">
         <a href="/">
-          <img src={VitalityLogo} alt="Bajaj Vitality" />
+          <img src="" alt="Bajaj Vitality" />
         </a>
       </div>
 

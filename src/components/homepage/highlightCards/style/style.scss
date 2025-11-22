@@ -1,0 +1,70 @@
+.hilightCards {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 66px;
+
+
+    .highlight-cards-container {
+        width: 1140px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+
+        .highlight-card {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 367px;
+            height: 122px;
+            background-color: #E7EDFF;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 10px;
+            border-radius: 12px;
+
+            .highlight-card-image {
+                width: 50px;
+                height: 50px;
+            }
+
+            .card-body {
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+                text-align: left;
+
+                .card-title {
+                    font-weight: 700;
+                    font-size: 18px;
+                    line-height: 22px;
+                }
+
+                .card-description {
+                    font-weight: 400;
+                    font-size: 12px;
+                    line-height: 16px;
+                }
+            }
+
+            &:hover {
+                cursor: pointer;
+                transition: box-shadow 0.3s ease-in-out;
+                background-color: #195AFF;
+
+                .card-body {
+                    .card-title {
+                        color: #E7EDFF;
+
+                    }
+
+                    .card-description {
+                        color: #E7EDFF;
+                    }
+                }
+            }
+        }
+    }
+}
