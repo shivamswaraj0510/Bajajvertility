@@ -6,7 +6,7 @@ export default function NavTop({ data }) {
         <div className="nav-top-container">
             <div className="nav-top">
                 <div className="nav-top-offer">
-                    <div className="logo">
+                    <div className="offer-logo">
                         <img src="./offer-icon.svg" alt="offer" />
                     </div>
                     <div className="offer">{data.offerText}</div>

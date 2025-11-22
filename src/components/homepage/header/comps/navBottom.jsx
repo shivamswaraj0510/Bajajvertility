@@ -1,7 +1,6 @@
 
 import "../style/navBottom.scss"
 export default function NavBottom({ data }) {
-    console.log(data);
     return (
         <div className="nav-bottom-container">
             <div className="nav-bottom">

@@ -1,190 +1,24 @@
-// import React, { useEffect, useMemo, useState } from "react";
-// import "./styles/footer.scss";
-// import { client } from "../../lib/sanity";
-
-// // ---- GROQ QUERIES ----
-// const FOOTER_BY_ID = `
-// *[_type == "footer" && _id == $id][0]{
-//   _id,
-//   title,
-//   footerSections[]->{
-//     _id,
-//     heading,
-//     linkItem[]{
-//       name,
-//       redirectionLink
-//     }
-//   }
-// }
-// `;
-
-// const FOOTER_BY_TITLE = `
-// *[_type == "footer" && title == $title][0]{
-//   _id,
-//   title,
-//   footerSections[]->{
-//     _id,
-//     heading,
-//     linkItem[]{
-//       name,
-//       redirectionLink
-//     }
-//   }
-// }
-// `;
-
-// const FOOTER_FIRST = `
-// *[_type == "footer"][0]{
-//   _id,
-//   title,
-//   footerSections[]->{
-//     _id,
-//     heading,
-//     linkItem[]{
-//       name,
-//       redirectionLink
-//     }
-//   }
-// }
-// `;
-
-// export default function Footer({ footerId, footerTitle }) {
-//   const [data, setData] = useState(null);
-//   const [loading, setLoading] = useState(true);
-//   const [error, setError] = useState(null);
-
-//   useEffect(() => {
-//     let cancelled = false;
-//     setLoading(true);
-//     setError(null);
-
-//     const query = footerId ? FOOTER_BY_ID : footerTitle ? FOOTER_BY_TITLE : FOOTER_FIRST;
-//     const params = footerId ? { id: footerId } : footerTitle ? { title: footerTitle } : {};
-
-//     client
-//       .fetch(query, params)
-//       .then((res) => {
-//         if (!cancelled) setData(res ?? null);
-//       })
-//       .catch((err) => {
-//         console.error(err);
-//         if (!cancelled) setError("Failed to load footer.");
-//       })
-//       .finally(() => {
-//         if (!cancelled) setLoading(false);
-//       });
-
-//     return () => {
-//       cancelled = true;
-//     };
-//   }, [footerId, footerTitle]);
-
-//   const sections = useMemo(() => data?.footerSections ?? [], [data]);
-
-//   // Helper to find a section by heading and return its links
-//   const getLinks = (heading) => {
-//     const sec = sections.find((s) => s.heading?.trim().toLowerCase() === heading.trim().toLowerCase());
-//     return sec?.linkItem ?? [];
-//   };
-
-//   const renderLinks = (links) =>
-//     links.map((li, idx) => {
-//       const href = li.redirectionLink || "#";
-//       const isExternal = /^https?:\/\//i.test(href);
-//       return (
-//         <li key={idx} className="footer__item">
-//           <a
-//             className="footer__link"
-//             href={href}
-//             {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-//           >
-//             {li.name ?? "Untitled"}
-//           </a>
-//         </li>
-//       );
-//     });
-
-//   if (loading) {
-//     // Keep container + class names intact
-//     return (
-//       <footer className="footer">
-//         <div className="footer__container">
-//           <p>Loading footer…</p>
-//         </div>
-//       </footer>
-//     );
-//   }
-
-//   if (error || !data) {
-//     return (
-//       <footer className="footer" role="alert">
-//         <div className="footer__container">
-//           <p>{error ?? "Footer not found."}</p>
-//         </div>
-//       </footer>
-//     );
-//   }
-
-//   // Preserve your original markup & class names; only the <li><a> items are injected from Sanity
-//   const quickLinks = getLinks("Quick Links");
-//   const forPatients = getLinks("For Patients");
-//   const centresExcellence = getLinks("Centres Of Excellence"); // note: matches sample heading
-//   const ourHospital = getLinks("Our Hospital");
-//   const topProcedures = getLinks("Top Procedures");
-
-//   return (
-//     <footer className="footer" aria-labelledby="footer-title">
-//       <div className="footer__container">
-//         {/* Grid of sections — same structure/classes as your attached file */}
-//         <div className="footer__grid">
-//           {/* Quick Links column */}
-//           <nav className="footer__col" aria-label="Quick Links">
-//             <h3 className="footer__heading">Quick Links</h3>
-//             <ul className="footer__list">{renderLinks(quickLinks)}</ul>
-//           </nav>
-
-//           {/* For Patients column */}
-//           <nav className="footer__col" aria-label="For Patients">
-//             <h3 className="footer__heading">For Patients</h3>
-//             <ul className="footer__list">{renderLinks(forPatients)}</ul>
-//           </nav>
-
-//           {/* Centres Of Excellence column */}
-//           <nav className="footer__col" aria-label="Centres of Excellence">
-//             <h3 className="footer__heading">Centres of Excellence</h3>
-//             <ul className="footer__list">{renderLinks(centresExcellence)}</ul>
-//           </nav>
-
-//           {/* Our Hospital column */}
-//           <nav className="footer__col" aria-label="Our Hospital">
-//             <h3 className="footer__heading">Our Hospital</h3>
-//             <ul className="footer__list">{renderLinks(ourHospital)}</ul>
-//           </nav>
-
-//           {/* Top Procedures column */}
-//           <nav className="footer__col" aria-label="Top Procedures">
-//             <h3 className="footer__heading">Top Procedures</h3>
-//             <ul className="footer__list">{renderLinks(topProcedures)}</ul>
-//           </nav>
-
-          
-//         </div>
-//       </div>
-//     </footer>
-//   );
-// }
-
-
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./styles/footer.scss";
 import { client } from "../../lib/sanity";
 
-const FOOTER_QUERY = `
-*[_type == "footer"][0]{
-  _id,
-  title,
+const query = `*[_type == "footer"][0]{
+  cta_text,
+  cta_description,
+  btn_text1,
+  btn_text2,
+  btn_text3,
+  btn_text4,
+  section_title,
   footerSections[]->{
-    _id,
+    heading,
+    linkItem[]{
+      name,
+      redirectionLink
+    }
+  },
+  section_title2,
+  footerSections2[]->{
     heading,
     linkItem[]{
       name,
@@ -194,81 +28,105 @@ const FOOTER_QUERY = `
 }
 `;
 
-export default function Footer() {
+const Footer = () => {
   const [data, setData] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    client.fetch(FOOTER_QUERY).then((res) => setData(res));
+    const fetchData = async () => {
+      try {
+        setIsLoading(true);
+        const res = await client.fetch(query);
+        console.log(res, "ni");
+
+        setData(res);
+      } catch (err) {
+        setError(err.message);
+        console.error("Error fetching banner data:", err);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+    fetchData();
   }, []);
 
-  const sections = useMemo(() => data?.footerSections ?? [], [data]);
-
-  // ✅ Updated helper (case-insensitive + partial match)
-  const getLinks = (heading) => {
-    const sec = sections.find((s) => {
-      const h = s.heading?.trim().toLowerCase();
-      const target = heading.trim().toLowerCase();
-      return h === target || h.includes(target) || target.includes(h);
-    });
-    return sec?.linkItem ?? [];
-  };
-
-  const renderLinks = (links) =>
-    links.map((li, idx) => {
-      const href = li.redirectionLink || "#";
-      return (
-        <li key={idx}>
-          <a href={href}>{li.name ?? "Untitled"}</a>
-        </li>
-      );
-    });
-
-  if (!data)
+  if (isLoading) {
     return (
-      <footer className="footer">
-        <div className="footer-container">
-          <p>Loading footer...</p>
-        </div>
-      </footer>
+      <div className="hero-banner-container">
+        <div className="loading">Loading...</div>
+      </div>
     );
+  }
 
-  // ✅ Now all headings will work even if names differ slightly in Sanity
-  const quickLinks = getLinks("Quick Links");
-  const forPatients = getLinks("For Patients");
-  const centres = getLinks("Centres Of Excellence");
-  const topProcedures = getLinks("Top Procedures");
-  const ourHospitals = getLinks("Our Hospitals"); // works even if 'Our Hospital' in Sanity
+  const cta_text = data?.cta_text;
+  const cta_description = data?.cta_description;
+  const section_title = data?.section_title;
+  const section_title2 = data?.section_title2;
+  const btn_text1 = data?.btn_text1;
+  const btn_text2 = data?.btn_text2;
+  const btn_text3 = data?.btn_text3;
+  const btn_text4 = data?.btn_text4;
+
+  const footer_sections = data?.footerSections[0];
+  const footer_sections2 = data?.footerSections2[0];
 
   return (
     <footer className="footer">
-      <div className="footer-container">
-        <div className="footer-grid">
-          <div className="footer-column">
-            <h4>Quick Links</h4>
-            <ul>{renderLinks(quickLinks)}</ul>
+      <div className="footer__top">
+        <div className="footer__brand">
+          <img src="src\assets\Group.svg" alt="Bajaj Finserv Logo" className="footer__logo" re />
+          <h1>{cta_text}</h1>
+          <p>{cta_description}</p>
+          <div className="footer__buttons">
+            <button className="btn"><img src="src\assets\call_icon.svg" /> {btn_text1}</button>
+            <button className="btn"><img src="src\assets\logo2.svg" />{btn_text2}</button>
+            <button className="btn"><img src="src/assets/logo4.svg" />{btn_text3}</button>
+            <button className="btn"><img src="src\assets\logo3.svg" /> {btn_text4}</button>
           </div>
+        </div>
 
-          <div className="footer-column">
-            <h4>For Patients</h4>
-            <ul>{renderLinks(forPatients)}</ul>
+        <div className="footer__links">
+          <div className="footer__column">
+            <h4>{section_title}</h4>
+            <ul>
+              {(footer_sections?.linkItem ?? []).map((item, idx) => (
+                <li key={item?.id ?? `${item?.name || "item"}-${idx}`}>
+                  {item?.name ?? "—"}
+                </li>
+              ))}
+            </ul>
           </div>
+          <div className="footer__column">
+            <h4>{section_title2}</h4>
+            <ul>
+              {(footer_sections2?.linkItem ?? []).map((item, idx) => (
+                <li key={item?.id ?? `${item?.name || "item"}-${idx}`}>
+                  {item?.name ?? "—"}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
 
-          <div className="footer-column">
-            <h4>Centres of Excellence</h4>
-            <ul>{renderLinks(centres)}</ul>
-          </div>
-
-          <div className="footer-column">
-            <h4>Top Procedures</h4>
-            <ul>{renderLinks(topProcedures)}</ul>
-          </div>
-
-          <div className="footer-column">
-            <h4>Our Hospitals</h4>
-            <ul>{renderLinks(ourHospitals)}</ul>
-          </div>
+      <div className="footer__bottom">
+        <div className="footer__social">
+          <img src="src\assets\social_media_logo1.svg" />
+          <img src="src\assets\social_media_logo2.svg" />
+          <img src="src/assets/social_media_logo3.svg" />
+          <img src="src/assets/social_media_logo4.svg" />
+        </div>
+        <div className="footer__policies">
+          <span>Privacy Policy</span>
+          <span>Terms & Condition</span>
+          <span>Do not share or sell my information</span>
+        </div>
+        <div className="footer__copyright">
+          2025 © <strong>Bajaj Vitality</strong>. All Rights Reserved.
         </div>
       </div>
     </footer>
   );
-}
+};
+
+export default Footer;
