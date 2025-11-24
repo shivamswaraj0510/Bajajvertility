@@ -41,7 +41,6 @@ const Footer = () => {
 
         setData(res);
       } catch (err) {
-        setError(err.message);
         console.error("Error fetching banner data:", err);
       } finally {
         setIsLoading(false);
