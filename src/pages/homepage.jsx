@@ -4,6 +4,7 @@ import HeroComponent from "../components/homepage/heroComponent/hero";
 import HighlightCards from "../components/homepage/highlightCards/highlightCards";
 import Specialist from "../components/homepage/specialist/specialist";
 import Testimonials from "../components/homepage/testimonials/testimonials";
+import HowItWorks from "../components/howItWokrs/howItWorks";
 import AboutUs from "../components/parkFacilities/parkFacilities";
 const Home = () => {
   return (
@@ -14,6 +15,7 @@ const Home = () => {
       <Specialist />
       <AboutUs />
       <Testimonials />
+      <HowItWorks />
       <Footer />
     </>
   );

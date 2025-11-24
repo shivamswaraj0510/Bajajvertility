@@ -1,0 +1,125 @@
+.howitworks {
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 48px 16px 64px;
+    color: #0B1324;
+}
+
+.howitworks__eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.howitworks__plus {
+    display: inline-flex;
+    width: 12px;
+    height: 12px;
+}
+
+.howitworks__eyebrowText {
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: #195AFF;
+    text-transform: uppercase;
+}
+
+.howitworks__title {
+    font-size: 32px;
+    line-height: 40px;
+    font-weight: 600;
+    margin: 0 0 10px 0;
+    color: #0B1324;
+    max-width: 510px;
+}
+
+.howitworks__subtitle {
+    font-size: 14px;
+    line-height: 22px;
+    color: #667085;
+    max-width: 760px;
+    font-weight: 400;
+    margin: 0 0 24px 0;
+}
+
+.howitworks__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-radius: 16px;
+    overflow: hidden;
+    background: #FFFFFF;
+}
+
+
+.howitworks__cell {
+    padding: 24px;
+    border: 0;
+}
+
+
+.howitworks__cell--left {
+    background: #E7EDFF;
+}
+
+.howitworks__cell--right {
+    background: #F4F7FF;
+}
+
+.howitworks__cell--tl {
+    border-top-left-radius: 16px;
+}
+
+.howitworks__cell--tr {
+    border-top-right-radius: 16px;
+}
+
+.howitworks__cell--bl {
+    border-bottom-left-radius: 16px;
+}
+
+.howitworks__cell--br {
+    border-bottom-right-radius: 16px;
+}
+
+.howitworks__cellHeader {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 6px;
+}
+
+.howitworks__badge {
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    border-radius: 999px;
+    background: #2A66F5;
+    color: #FFFFFF;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0.02em;
+}
+
+.howitworks__cellTitle {
+    font-size: 18px;
+    line-height: 26px;
+    font-weight: 700;
+    margin: 0;
+    color: #0B1324;
+}
+
+.howitworks__cellBody {
+    font-size: 14px;
+    line-height: 22px;
+    color: #667085;
+    margin: 0;
+    max-width: 540px;
+    padding-left: 50px;
+    padding-right: 15px;
+}
