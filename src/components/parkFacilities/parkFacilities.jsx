@@ -1,6 +1,5 @@
 import React from "react";
 import "./styles/parkFacilities.scss";
-import bg from "../../assets/backgound.png";
 
 const AboutUs = () => {
   return (
@@ -8,16 +7,16 @@ const AboutUs = () => {
       <div className="top-section">
         <div className="image-column">
           <div className="video-card1">
-            <img src="src/assets/d9b743ac5e0c1b7c9c4624f397adce8c308503b0.png" />
+            <img src="./d9b743ac5e0c1b7c9c4624f397adce8c308503b0.png" />
           </div>
           <div className="video-card">
-            <img src="src\assets\7654039b4a8f6548c9aa5a6e4ac15a377a90ab8f.png" />
-            <img className="icon" src="src\assets\PlayCircle.svg" />
+            <img src="./7654039b4a8f6548c9aa5a6e4ac15a377a90ab8f.png" />
+            <img className="icon" src="./PlayCircle.svg" />
           </div>
         </div>
         <div className="content-column">
           <div className="section-title">
-            <img src="src\assets\Vector.png" /> ABOUT US
+            <img src="./Vector.png" /> ABOUT US
           </div>
           <h2>Bajaj Vitality Create A Safe, Your Health Our Priority</h2>
           <p>
@@ -28,12 +27,12 @@ const AboutUs = () => {
 
           <div className="vision-row">
             <div className="vision-card">
-              <div className="vision-container"><img src="src\assets\vision_icon1.png" /></div>
+              <div className="vision-container"><img src="./vision_icon1.png" /></div>
               <h4>Our Vision 1</h4>
               <p>To build a better health system that is equitable and comprehensive.</p>
             </div>
             <div className="vision-card">
-              <div className="vision-container"><img src="src\assets\vision_icon.png" /></div>
+              <div className="vision-container"><img src="./vision_icon.png" /></div>
               <h4>Our Vision 2</h4>
               <p>Bajaj Vitality delivers expert, reliable services for all your wellness needs.</p>
             </div>
@@ -44,7 +43,7 @@ const AboutUs = () => {
       </div>
       <div className="bottom-section"
         style={{
-          backgroundImage: `url(${bg})`,
+          backgroundImage: `url(./backgound.png)`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
@@ -52,7 +51,7 @@ const AboutUs = () => {
         }}
       >
         <div className="bottom-content">
-          <div className="section-title-orange"><img src="src\assets\Vector (2).svg" />OUR COMMITMENT</div>
+          <div className="section-title-orange"><img src="./Vector (2).svg" />OUR COMMITMENT</div>
           <h3>
             Dedicated To Excellence In Healthcare Through Trusted Partnerships
           </h3>
@@ -67,4 +66,3 @@ const AboutUs = () => {
 };
 
 export default AboutUs;
-

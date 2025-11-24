@@ -74,14 +74,14 @@ const Footer = () => {
     <footer className="footer">
       <div className="footer__top">
         <div className="footer__brand">
-          <img src="src\assets\Group.svg" alt="Bajaj Finserv Logo" className="footer__logo" re />
+          <img src="./Group.svg" alt="Bajaj Finserv Logo" className="footer__logo" re />
           <h1>{cta_text}</h1>
           <p>{cta_description}</p>
           <div className="footer__buttons">
-            <button className="btn"><img src="src\assets\call_icon.svg" /> {btn_text1}</button>
-            <button className="btn"><img src="src\assets\logo2.svg" />{btn_text2}</button>
-            <button className="btn"><img src="src/assets/logo4.svg" />{btn_text3}</button>
-            <button className="btn"><img src="src\assets\logo3.svg" /> {btn_text4}</button>
+            <button className="btn"><img src="./call_icon.svg" /> {btn_text1}</button>
+            <button className="btn"><img src="./logo2.svg" />{btn_text2}</button>
+            <button className="btn"><img src="./logo4.svg" />{btn_text3}</button>
+            <button className="btn"><img src="./logo3.svg" /> {btn_text4}</button>
           </div>
         </div>
 
@@ -111,10 +111,10 @@ const Footer = () => {
 
       <div className="footer__bottom">
         <div className="footer__social">
-          <img src="src\assets\social_media_logo1.svg" />
-          <img src="src\assets\social_media_logo2.svg" />
-          <img src="src/assets/social_media_logo3.svg" />
-          <img src="src/assets/social_media_logo4.svg" />
+          <img src="./social_media_logo1.svg" />
+          <img src="./social_media_logo2.svg" />
+          <img src="./social_media_logo3.svg" />
+          <img src="./social_media_logo4.svg" />
         </div>
         <div className="footer__policies">
           <span>Privacy Policy</span>
