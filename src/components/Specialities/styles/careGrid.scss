@@ -1,0 +1,148 @@
+:root {
+  /* Colors */
+  --bg-page: #F6F9FF;
+  --blue-600: #1e5eff;
+  --blue-500: #2369ff;
+  --text-900: #1a1f2c;
+  --text-700: #5f6b7a;
+  --grid-border: #e6eaf2;
+  --tile-bg: #F6F9FF;
+  --section-max-w: 1120px;
+  --grid-radius: 6px;
+  --tile-h: 160px;
+  /* tile height */
+  --icon-size: 40px;
+  /* heart icon size */
+  --label-size: 13.5px;
+  /* label font size */
+  --label-spacing: 10px;
+  /* spacing between icon and label */
+}
+
+/* Section wrapper */
+.care-section {
+  background: var(--bg-page);
+  padding: 48px 24px 56px;
+  display: grid;
+  justify-items: center;
+}
+
+.care-header {
+  text-align: center;
+  max-width: 720px;
+  margin-bottom: 24px;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #195AFF;
+  text-transform: uppercase;
+}
+.eyebrow img{
+  width: 13px;
+  height: 13px;
+}
+
+.care-header h2 {
+  color: #0B1324;
+  margin: 0 0 8px;
+  font-size: 32px;
+  line-height: 38px;
+  font-weight: 700;
+}
+
+.care-subtitle {
+  font-size: 13px;
+  line-height: 24px;
+  color: #131313;
+  margin: 0;
+}
+
+/* GRID: fixed 4 columns x 3 rows */
+.care-grid {
+  width: 100%;
+  max-width: var(--section-max-w);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  /* <-- strict 4 columns */
+  grid-auto-rows: var(--tile-h);
+  /* each tile fixed height */
+  border: 1px solid var(--grid-border);
+  border-radius: var(--grid-radius);
+  overflow: hidden;
+  background: var(--tile-bg);
+}
+
+/* Tile buttons */
+.care-tile {
+  appearance: none;
+  background: var(--tile-bg);
+  border: none;
+  position: relative;
+  /* Inner dividers drawn via pseudo-element to avoid double borders */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* center heart + label vertically */
+  gap: var(--label-spacing);
+  height: 100%;
+  cursor: pointer;
+  transition: background 160ms ease, color 160ms ease;
+  font-family: var(--font-sans);
+}
+
+/* Divider lines: right and bottom */
+.care-tile::after,
+.care-tile::before {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  background: var(--grid-border);
+}
+
+.care-tile::after {
+  /* vertical (right) line */
+  top: 0;
+  right: 0;
+  width: 1px;
+  height: 100%;
+}
+
+.care-tile::before {
+  /* horizontal (bottom) line */
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+}
+
+/* Remove right border on last column (4th, 8th, 12th) */
+.care-tile:nth-child(4n)::after {
+  display: none;
+}
+
+/* Remove bottom border on last row (items 9-12) */
+.care-tile:nth-child(n + 9)::before {
+  display: none;
+}
+
+
+
+.heart-icon {
+  width: var(--icon-size);
+  height: var(--icon-size);
+  color: var(--blue-500);
+  /* stroke uses currentColor */
+}
+
+.care-tile:hover {
+  background-color: #195AFF;
+}

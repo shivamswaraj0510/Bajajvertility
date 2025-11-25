@@ -1,0 +1,179 @@
+:root {
+    --bg: #FFFFFF;
+    --text: #121212;
+    --muted: #131313;
+    --eyebrow: #195AFF;
+    --card-bg: #f8fafc;
+    --shadow: 0 8px 24px rgba(16, 24, 40, 0.08);
+    --radius-xl: 16px;
+    --radius-lg: 12px;
+    --radius-md: 10px;
+    --radius-sm: 8px;
+
+    --hero-height: 450px;
+    --thumb-height: 145px;
+}
+
+
+.bn-section {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 48px 20px 64px;
+    background: var(--bg);
+    color: var(--text);
+}
+
+.bn-header {
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+.bn-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--eyebrow);
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 16px;
+}
+
+.bn-eyebrow img {
+    width: 12px;
+    height: 12px;
+    padding-top: 0.3px;
+}
+
+
+.bn-title {
+    margin: 8px 0 10px;
+    font-size: 32px;
+    line-height: 38px;
+    font-weight: 700;
+}
+
+.bn-subtitle {
+    margin: 0 auto;
+    max-width: 720px;
+    font-size: 15.5px;
+    color: var(--muted);
+    font-weight: 400;
+}
+
+.bn-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 22px;
+    align-items: start;
+}
+
+.bn-hero-card {
+    position: relative;
+    height: var(--hero-height);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    background: #000;
+}
+
+.bn-hero-bg {
+    position: absolute;
+    inset: 0;
+    background-image: url("/assets/blog/hero-checkup.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: saturate(1.05);
+}
+
+.bn-hero-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg,
+            rgba(0, 0, 0, 0.0) 0%,
+            rgba(0, 0, 0, 0.20) 35%,
+            rgba(0, 0, 0, 0.55) 100%);
+}
+
+.bn-hero-content {
+    position: absolute;
+    inset: auto 20px 20px 20px;
+    z-index: 2;
+    color: #fff;
+    display: grid;
+    gap: 10px;
+}
+
+.bn-hero-meta {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.85);
+    letter-spacing: 0.02em;
+}
+
+.bn-hero-title {
+    margin: 0;
+    font-size: 22px;
+    line-height: 30px;
+    font-weight: 600;
+}
+
+.bn-cta {
+    justify-self: start;
+    margin-top: 6px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background: #FFA250;
+    color: #fff;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 10px 16px;
+    border-radius: 999px;
+    transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.bn-cta:hover {
+    transform: translateY(-1px);
+}
+
+.bn-list {
+    display: grid;
+    gap: 16px;
+}
+
+.bn-item {
+    display: grid;
+    gap: 14px;
+    align-items: center;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+}
+
+.bn-item-thumb {
+    height: var(--thumb-height);
+    background-image: url("/assets/blog/item-stress.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.bn-item-thumb--alt {
+    background-image: url("/assets/blog/item-emergency.jpg");
+}
+
+.bn-item-content {
+    padding-right: 16px;
+}
+
+.bn-item-title {
+    margin: 0 0 6px;
+    font-size: 16.5px;
+    line-height: 1.35;
+    font-weight: 600;
+    color: var(--text);
+}
+
+.bn-item-date {
+    font-size: 13px;
+    color: var(--muted);
+}

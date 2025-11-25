@@ -8,6 +8,7 @@ export const client = createClient({
   useCdn: false,
   token:
     "skbpqOdqhEtsQ1fdnNnSSuxvG5o4K1ylgdnqI5GCMzu8kIE76EbvmygHjgsoaNFKEB9wqwEid92GbBpHpSGgMvVDotY8mteSsUQ5jfTqteCxHNdKjzOYOD2YFv9o1jmV9dUxkEzQdFBI1VpvB4590VjqPlRTioVjwghwgJni7TV85FQdJ25G", // 🔹 Add this line (see below)
+  perspective: "published",
 });
 // Initialize image builder
 const builder = imageUrlBuilder(client);
