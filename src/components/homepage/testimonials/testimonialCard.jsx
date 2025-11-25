@@ -1,8 +1,6 @@
 import { renderStars } from "./Stars";
 import "./styles/testimonialCard.scss";
 export default function TestimonialCard({ data }) {
-    console.log(data);
-
     return (
         <div className="testimonial-card">
             <div className="testimonial-card-header">

@@ -1,0 +1,129 @@
+.contact-section {
+    background: #f7faff;
+    display: grid;
+    justify-content: center;
+    padding: 48px 24px 64px;
+}
+
+.contact-header {
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+.contact-kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #2a62ff;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+}
+
+.contact-plus {
+    display: inline-flex;
+    width: 18px;
+    height: 18px;
+    border-radius: 9px;
+    background: #e7efff;
+    color: #2a62ff;
+    align-items: center;
+    justify-content: center;
+}
+.contact-kicker img{
+    height: 12px;
+    width: 12px;
+}
+
+.contact-title {
+    margin: 10px 0 0;
+    font-size: 28px;
+    font-weight: 700;
+    color: #0e1a2b;
+}
+
+.contact-grid {
+    margin: 20px auto 0;
+    display: grid;
+    grid-template-columns: repeat(4, 250px);
+    gap: 28px;
+}
+
+.contact-card {
+    height: 160px;
+    border-radius: 12px;
+    padding: 22px;
+}
+
+.contact-card--subtle {
+    background: #e9efff;
+    border: 1px solid #dde6ff;
+}
+
+.contact-card--accent {
+    background: #2464ff;
+    color: #ffffff;
+}
+
+.contact-card__body {
+    padding-left: 14px;
+    padding-top: 10px;
+}
+
+.contact-card__title {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    color: #1F2B6C;
+    margin: 2px 0 10px;
+}
+
+.contact-card__title--accent {
+    color: rgba(255, 255, 255, 0.65);
+}
+
+.contact-card__line {
+    margin: 4px 0;
+    font-size: 13.5px;
+    color: #1F2B6C;
+}
+
+.contact-card__line--accent {
+    color: #ffffff;
+}
+
+.icon-capsule {
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+}
+
+.icon-capsule--subtle {
+    background: #f0f5ff;
+}
+
+.icon-capsule--accent {
+    background: rgba(255, 255, 255, 0.18);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.icon-img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    image-rendering: auto;
+    position: relative;
+    left: 10px;
+}
+
+.contact-card:hover {
+  background-color:#195AFF;
+
+  .contact-card__body h3{
+    color: #FFFFFF;
+  }
+  .contact-card__body p{
+    color: #FFFFFF;
+  }
+}
