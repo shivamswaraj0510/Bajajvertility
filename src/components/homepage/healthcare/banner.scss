@@ -45,7 +45,7 @@ text-transform: uppercase;
 
 .banner-title {
   width: 640px;
-height: 60px;
+// height: 60px;
 angle: 0 deg;
 opacity: 1;
 font-family: Mulish;
@@ -53,10 +53,11 @@ font-weight: 700;
 font-style: Bold;
 font-size: 40px;
 leading-trim: NONE;
-line-height: 60px;
+line-height: 44px;
 letter-spacing: 0%;
 text-transform: capitalize;
 color: #FFFFFF;
+margin-bottom: 0px !important;
 
 }
 
