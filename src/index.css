@@ -3,13 +3,5 @@ body {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    scrollbar-width: none;
-}
-
-body {
-    background-image: url(./assets/Texture_Background.png);
-}
-
-p {
-    background: transparent;
+    font-family: "Mulish", sans-serif;
 }

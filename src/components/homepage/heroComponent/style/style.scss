@@ -1,150 +1,192 @@
 .hero-component {
     width: 100%;
     height: 705px;
-    background-image: url(./herobg.png);
     background-size: cover;
     background-position: center center;
     margin-top: 110px;
-    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-    .hero-content {
-        width: 540px;
-        position: absolute;
-        top: 50px;
-        left: 150px;
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        color: #ffffff;
-        font-family: 'Poppins', sans-serif;
-        font-weight: 500;
 
-        .welcome-title {
+    .hero-component-container {
+        position: relative;
+        width: 1140px;
+        height: 100%;
+
+        .hero-content {
+            width: 540px;
+            position: absolute;
+            top: 50px;
+            left: 0px;
             display: flex;
             flex-direction: column;
-            gap: 16px;
+            gap: 20px;
+            color: #ffffff;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
 
-            >span {
-                color: #FCB528;
+            .welcome-title {
                 display: flex;
-                align-items: center;
-                gap: 10px;
+                flex-direction: column;
+                gap: 16px;
 
-                >img {
+                >span {
+                    color: #FCB528;
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+
+                    >img {
+                        vertical-align: middle;
+                        width: 15px;
+                        height: 15px;
+                    }
+                }
+
+                .welcome-heading {
+                    color: #FAFAFA;
+                    font-weight: 700;
+                    font-size: 56px;
+                    line-height: 60px;
+                    letter-spacing: 0%;
                     vertical-align: middle;
-                    width: 15px;
-                    height: 15px;
+                    text-transform: capitalize;
+                }
+
+                .sub-heading {
+                    color: #FAFAFA;
+                    font-weight: 500;
+                    font-size: 20px;
+                    line-height: 28px;
+                    letter-spacing: 0%;
+                }
+
+                .description {
+                    color: #FAFAFA;
+                    font-weight: 400;
+                    font-size: 16px;
+                    line-height: 24px;
+                    letter-spacing: 1%;
                 }
             }
 
-            >h2 {
-                font-weight: 700;
-                font-size: 56px;
-                line-height: 60px;
-                letter-spacing: 0%;
-                vertical-align: middle;
-                text-transform: capitalize;
+            .hero-cta-group {
+                display: flex;
+                gap: 20px;
+
+                .btn {
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 12px 24px;
+                    color: #ffffff;
+                    border-radius: 30px;
+                    text-decoration: none;
+                    cursor: pointer;
+                    font-weight: 500;
+                    font-size: 14px;
+                    line-height: 18px;
+                    letter-spacing: 0%;
+
+                    >img {
+                        width: 35px;
+                        height: 30px;
+                    }
+                }
+
+                .btn-primary {
+                    background-color: #195AFF;
+                    border: none;
+                }
+
+                .btn-secondary {
+                    border: 1px solid #fff;
+                }
             }
 
-            .sub-heading {
-                font-weight: 500;
-                font-size: 20px;
-                line-height: 28px;
-                letter-spacing: 0%;
-            }
-
-            .description {
-                font-weight: 400;
-                font-size: 16px;
-                line-height: 24px;
-                letter-spacing: 1%;
-            }
         }
 
-        .hero-cta-group {
+        .hero-stats {
+            position: absolute;
+            bottom: 300px;
+            right: 0px;
             display: flex;
-            gap: 20px;
+            flex-direction: column;
+            gap: 30px;
 
-            .btn {
-                display: inline-flex;
+            .stat-item {
+                width: 150px;
+                height: 80px;
+                display: flex;
+                flex-direction: column;
                 align-items: center;
                 justify-content: center;
-                padding: 12px 24px;
-                color: #ffffff;
-                border-radius: 30px;
-                text-decoration: none;
-                cursor: pointer;
-                font-weight: 500;
-                font-size: 14px;
-                line-height: 18px;
-                letter-spacing: 0%;
+                border-radius: 10px;
+                border-top: 0.5px solid #fff;
+                border-bottom: 0.5px solid #fff;
+                overflow: hidden;
+                gap: 2px;
+                text-align: center;
+                background-color: #00000045;
+                backdrop-filter: blur(11px);
+                color: #FAFAFA;
 
-                >img {
-                    width: 35px;
-                    height: 30px;
+                .stat-item-value {
+                    font-weight: 500;
+                    font-size: 32px;
+                    line-height: 36px;
+                    letter-spacing: 0%;
+                    text-align: center;
+                    vertical-align: middle;
                 }
-            }
 
-            .btn-primary {
-                background-color: #195AFF;
-                border: none;
-            }
-
-            .btn-secondary {
-                border: 1px solid #fff;
+                .stat-item-label {
+                    font-weight: 400;
+                    font-size: 16px;
+                    line-height: 26px;
+                    letter-spacing: 0%;
+                    text-align: center;
+                }
             }
         }
 
-    }
+        .find-doctor {
+            width: 1040px;
+            position: absolute;
+            bottom: 60px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
 
-    .hero-stats {
-        position: absolute;
-        bottom: 300px;
-        right: 150px;
-        display: flex;
-        flex-direction: column;
-        gap: 30px;
-
-        .stat-item {
-            width: 150px;
-            height: 80px;
+        .loading-container {
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            border-radius: 10px;
-            border-top: 0.5px solid #fff;
-            border-bottom: 0.5px solid #fff;
-            overflow: hidden;
-            gap: 2px;
-            text-align: center;
-            backdrop-filter: blur(11px);
-            color: #FAFAFA;
+            height: 100%;
+            gap: 20px;
 
-            .stat-item-value {
-                font-weight: 500;
-                font-size: 32px;
-                line-height: 36px;
-                letter-spacing: 0%;
-                text-align: center;
-                vertical-align: middle;
+            .spinner {
+                width: 40px;
+                height: 40px;
+                border: 4px solid #f3f3f3;
+                border-top: 4px solid #195AFF;
+                border-radius: 50%;
+                animation: spin 1s linear infinite;
             }
 
-            .stat-item-label {
-                font-weight: 400;
-                font-size: 16px;
-                line-height: 26px;
-                letter-spacing: 0%;
-                text-align: center;
+            .loading-text {
+                color: #195AFF;
+                font-size: 18px;
+                font-weight: 500;
+                margin: 0;
             }
         }
     }
+}
 
-    .find-doctor {
-        width: 1040px;
-        position: absolute;
-        bottom: 60px;
-        left: 50%;
-        transform: translateX(-50%);
-    }
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
