@@ -1,0 +1,157 @@
+.health-section {
+  width: 100%;
+  padding: 60px 0;
+}
+
+.health-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 50px auto;
+}
+
+.tagline {
+  color: #2b6de0;
+  font-family: Inter;
+font-weight: 700;
+font-style: Bold;
+font-size: 14px;
+leading-trim: NONE;
+line-height: 22px;
+letter-spacing: 10%;
+text-align: center;
+text-transform: uppercase;
+
+}
+
+.title {
+  font-size: 32px;
+  font-weight: 600;
+  font-family: Mulish;
+font-weight: 600;
+font-style: SemiBold;
+font-size: 40px;
+leading-trim: NONE;
+line-height: 60px;
+letter-spacing: 0%;
+text-align: center;
+text-transform: capitalize;
+color: #031E2D;
+
+}
+
+.subtext {
+  font-family: Inter;
+font-weight: 400;
+font-style: Regular;
+font-size: 16px;
+leading-trim: NONE;
+line-height: 24px;
+letter-spacing: 1%;
+text-align: center;
+
+  color: #131313;
+}
+
+.health-grid {
+  width: 1160px;
+//   max-width: 1200px;
+ margin:  auto;
+  display: grid;
+//   grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+ grid-template-columns: repeat(3, 1fr);
+ align-items: center;
+  gap: 24px;
+}
+
+/* CARD */
+.health-card {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    // width: 486px;
+    gap:16px;
+    height: 260px;
+  background: #E7EDFF;
+  border-radius: 24px;
+  padding: 32px;
+  transition: 0.25s ease;
+  cursor: pointer;
+}
+
+.health-card:hover {
+  background:#195AFF;
+  color: #ffffff;
+//   transform: translateY(-4px);
+}
+
+.health-card:hover .card-desc {
+  color: #f1f1f1;
+}
+
+.icon-wrap {
+  background: white;
+//   width: 54px;
+//   height: 54px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.card-title {
+  font-family: Mulish;
+font-weight: 600;
+font-style: SemiBold;
+font-size: 24px;
+leading-trim: NONE;
+line-height: 32px;
+letter-spacing: 0%;
+
+}
+
+.card-desc {
+  color: #131313;
+  font-family: Inter;
+font-weight: 400;
+font-style: Regular;
+font-size: 16px;
+leading-trim: NONE;
+line-height: 24px;
+letter-spacing: 1%;
+
+}
+
+/* EMERGENCY HARD CODED CARD */
+.emergency {
+  background: #13131366 !important;
+  color: white !important;
+}
+
+.emergency-title {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.emergency-desc {
+  color: #e8e8e8;
+  margin-bottom: 18px;
+}
+
+/* CONTACT BUTTON */
+.contact-btn {
+  background: transparent;
+  border: 1px solid white;
+  padding: 10px 20px;
+  color: white;
+  border-radius: 30px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.contact-btn:hover {
+  background: white;
+  color: #333;
+}
