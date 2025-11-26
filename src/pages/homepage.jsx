@@ -21,12 +21,14 @@ const Home = () => {
       <HeroComponent />
       <HighlightCards />
       <AboutUs />
+      <HealthcareSection />
+      <HealthcareBanner />
       <Specialist />
       <HowItWorks />
-      <CareGrid/>
+      <CareGrid />
       <Testimonials />
-      <BlogNewsSection/>
-      <ContactSection/>
+      <BlogNewsSection />
+      <ContactSection />
       <SubscribeNewslatter />
       <Footer />
     </>
