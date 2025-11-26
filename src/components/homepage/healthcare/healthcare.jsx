@@ -34,7 +34,7 @@ export default function HealthcareSection() {
   return (
     <section className="health-section">
       <div className="health-header">
-        <p className="tagline">OUR SERVICES</p>
+        <p className="tagline"><img src="./Vector.png" />OUR SERVICES</p>
         <h2 className="title">{data.sectionTitle}</h2>
 
         <p className="subtext">
