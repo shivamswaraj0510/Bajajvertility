@@ -11,67 +11,67 @@
 
 .tagline {
   color: #2b6de0;
-  font-family: Inter;
-font-weight: 700;
-font-style: Bold;
-font-size: 14px;
-leading-trim: NONE;
-line-height: 22px;
-letter-spacing: 10%;
-text-align: center;
-text-transform: uppercase;
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 14px;
+  leading-trim: NONE;
+  line-height: 22px;
+  letter-spacing: 10%;
+  text-align: center;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
 
 }
 
 .title {
   font-size: 32px;
   font-weight: 600;
-  font-family: Mulish;
-font-weight: 600;
-font-style: SemiBold;
-font-size: 40px;
-leading-trim: NONE;
-line-height: 60px;
-letter-spacing: 0%;
-text-align: center;
-text-transform: capitalize;
-color: #031E2D;
+  font-weight: 600;
+  font-style: SemiBold;
+  font-size: 40px;
+  leading-trim: NONE;
+  line-height: 60px;
+  letter-spacing: 0%;
+  text-align: center;
+  text-transform: capitalize;
+  color: #031E2D;
 
 }
 
 .subtext {
-  font-family: Inter;
-font-weight: 400;
-font-style: Regular;
-font-size: 16px;
-leading-trim: NONE;
-line-height: 24px;
-letter-spacing: 1%;
-text-align: center;
+  font-weight: 400;
+  font-size: 16px;
+  leading-trim: NONE;
+  line-height: 24px;
+  letter-spacing: 1%;
+  text-align: center;
 
   color: #131313;
 }
 
 .health-grid {
   width: 1160px;
-//   max-width: 1200px;
- margin:  auto;
+  //   max-width: 1200px;
+  margin: auto;
   display: grid;
-//   grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
- grid-template-columns: repeat(3, 1fr);
- align-items: center;
+  //   grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
   gap: 24px;
 }
 
 /* CARD */
 .health-card {
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    justify-content: center;
-    // width: 486px;
-    gap:16px;
-    height: 260px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  // width: 486px;
+  gap: 16px;
+  height: 260px;
   background: #E7EDFF;
   border-radius: 24px;
   padding: 32px;
@@ -80,9 +80,9 @@ text-align: center;
 }
 
 .health-card:hover {
-  background:#195AFF;
+  background: #195AFF;
   color: #ffffff;
-//   transform: translateY(-4px);
+  //   transform: translateY(-4px);
 }
 
 .health-card:hover .card-desc {
@@ -91,8 +91,8 @@ text-align: center;
 
 .icon-wrap {
   background: white;
-//   width: 54px;
-//   height: 54px;
+  //   width: 54px;
+  //   height: 54px;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -101,25 +101,23 @@ text-align: center;
 }
 
 .card-title {
-  font-family: Mulish;
-font-weight: 600;
-font-style: SemiBold;
-font-size: 24px;
-leading-trim: NONE;
-line-height: 32px;
-letter-spacing: 0%;
+  font-weight: 600;
+  font-style: SemiBold;
+  font-size: 24px;
+  leading-trim: NONE;
+  line-height: 32px;
+  letter-spacing: 0%;
 
 }
 
 .card-desc {
   color: #131313;
-  font-family: Inter;
-font-weight: 400;
-font-style: Regular;
-font-size: 16px;
-leading-trim: NONE;
-line-height: 24px;
-letter-spacing: 1%;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 16px;
+  leading-trim: NONE;
+  line-height: 24px;
+  letter-spacing: 1%;
 
 }
 
