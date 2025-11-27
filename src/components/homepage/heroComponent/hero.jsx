@@ -32,19 +32,19 @@ export default function HeroComponent() {
                 const response = await client.fetch(query);
                 setData(response);
 
-                // if (response?.heroImageUrl) {
-                //     const img = new Image();
-                //     img.onload = () => {
-                //         setImageLoaded(true);
-                //         setLoading(false);
-                //     };
-                //     img.onerror = () => {
-                //         setLoading(false);
-                //     };
-                //     img.src = response.heroImageUrl;
-                // } else {
-                //     setLoading(false);
-                // }
+                if (response?.heroImageUrl) {
+                    const img = new Image();
+                    img.onload = () => {
+                        setImageLoaded(true);
+                        setLoading(false);
+                    };
+                    img.onerror = () => {
+                        setLoading(false);
+                    };
+                    img.src = response.heroImageUrl;
+                } else {
+                    setLoading(false);
+                }
             } catch (error) {
                 console.error("Error fetching data:", error);
                 setLoading(false);
