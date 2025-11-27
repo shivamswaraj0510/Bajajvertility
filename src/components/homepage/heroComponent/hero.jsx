@@ -25,26 +25,26 @@ export default function HeroComponent() {
     const [loading, setLoading] = useState(true);
     const [imageLoaded, setImageLoaded] = useState(false);
     const backgroundImage = data ? `url(${data.heroImageUrl})` : "none";
-    
+
     useEffect(() => {
         const fetchData = async () => {
             try {
                 const response = await client.fetch(query);
                 setData(response);
-                
-                if (response?.heroImageUrl) {
-                    const img = new Image();
-                    img.onload = () => {
-                        setImageLoaded(true);
-                        setLoading(false);
-                    };
-                    img.onerror = () => {
-                        setLoading(false);
-                    };
-                    img.src = response.heroImageUrl;
-                } else {
-                    setLoading(false);
-                }
+
+                // if (response?.heroImageUrl) {
+                //     const img = new Image();
+                //     img.onload = () => {
+                //         setImageLoaded(true);
+                //         setLoading(false);
+                //     };
+                //     img.onerror = () => {
+                //         setLoading(false);
+                //     };
+                //     img.src = response.heroImageUrl;
+                // } else {
+                //     setLoading(false);
+                // }
             } catch (error) {
                 console.error("Error fetching data:", error);
                 setLoading(false);
@@ -77,7 +77,7 @@ export default function HeroComponent() {
                     </div>
                     <div className="hero-cta-group">
                         <a href={data?.firstCtaUrl} className="btn btn-primary">{data?.firstCtaText}</a>
-                        <a href={data?.watchVideoUrl} className="btn btn-secondary">
+                        <a href={data?.watchVideoUrl} className="watch-btn btn-secondary">
                             <img src="./video-play-icon.svg" alt="" />
                             <span>{data?.watchVideoText}</span>
                         </a>

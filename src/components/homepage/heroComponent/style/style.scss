@@ -89,9 +89,30 @@
                     line-height: 18px;
                     letter-spacing: 0%;
 
+
+                }
+
+                .watch-btn {
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: #ffffff;
+                    border-radius: 30px;
+                    text-decoration: none;
+                    cursor: pointer;
+                    font-weight: 500;
+                    font-size: 14px;
+                    line-height: 18px;
+
+                    >span {
+                        margin-right: 20px;
+                        text-transform: capitalize;
+
+                    }
+
                     >img {
-                        width: 35px;
-                        height: 30px;
+                        width: 40px;
+                        height: 40px;
                     }
                 }
 
@@ -187,6 +208,11 @@
 }
 
 @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }
