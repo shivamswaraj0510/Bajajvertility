@@ -155,14 +155,19 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    transform-origin: center;
+    transform: scale(1.2);
 }
 
 .bn-item-thumb--alt {
     background-image: url("/assets/blog/item-emergency.jpg");
+    transform: scale(1);
 }
 
 .bn-item-content {
     padding-right: 16px;
+    padding-bottom: 15px;
+    padding-top: 5px;
 }
 
 .bn-item-title {
@@ -176,4 +181,23 @@
 .bn-item-date {
     font-size: 13px;
     color: var(--muted);
+}
+
+.bn-item-thumb::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background: linear-gradient(180deg,
+            rgba(0, 0, 0, 0.00) 0%,
+            rgba(0, 0, 0, 0.20) 35%,
+            rgba(0, 0, 0, 0.55) 100%);
+}
+
+.bn-item-thumb--alt::after {
+    background: linear-gradient(180deg,
+            rgba(0, 0, 0, 0.00) 0%,
+            rgba(0, 0, 0, 0.18) 40%,
+            rgba(0, 0, 0, 0.60) 100%);
 }

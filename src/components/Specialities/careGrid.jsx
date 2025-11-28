@@ -117,26 +117,7 @@ const CareGrid = () => {
             type="button"
             aria-pressed={activeIndex === idx}
           >
-            {/* Sample double-heart icon (replace path later) */}
-            <svg className="heart-icon" viewBox="0 0 24 24" aria-hidden="true">
-              <path
-                d="M12 21s-6.2-4.5-9.2-8.4C-0.2 8.7 1.8 4.1 6 3.5c2-.3 4 .6 6 2.6 2-2 4-2.9 6-2.6 4.2.6 6.4 5.2 3.2 9.1C18.4 16.5 12 21 12 21z"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-              <path
-                d="M12 18s-4.5-3.3-6.7-6.2c-2-2.6-.7-5.6 1.9-6 1.6-.2 3 .5 4.8 2.2 1.7-1.7 3.2-2.4 4.8-2.2 2.7.4 3.9 3.4 1.9 6C16.5 14.7 12 18 12 18z"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                opacity="0.92"
-              />
-            </svg>
+            <img className="heart-image" src="./Blue.svg"/>
             <span className="care-label">{label}</span>
           </button>
         ))}
