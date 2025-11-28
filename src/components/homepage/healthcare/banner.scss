@@ -2,7 +2,8 @@
   width: 100%;
   max-width: 1200px;
   margin: 40px auto;
-  background: #12357B; /* dark blue */
+  background: #12357B;
+  /* dark blue */
   padding: 40px 50px;
   border-radius: 20px;
   display: flex;
@@ -13,10 +14,10 @@
 }
 
 .health-left {
- width: 55%;
-    display: flex;
-    flex-direction: column;
-    gap: 20px
+  width: 55%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px
 }
 
 .tag-row {
@@ -31,57 +32,58 @@
 }
 
 .tag-text {
-font-weight: 700;
-font-style: Bold;
-font-size: 14px;
-leading-trim: NONE;
-line-height: 22px;
-letter-spacing: 10%;
-text-align: center;
-text-transform: uppercase;
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 14px;
+  leading-trim: NONE;
+  line-height: 22px;
+  letter-spacing: 10%;
+  text-align: center;
+  text-transform: uppercase;
 
 }
 
 .banner-title {
   width: 640px;
-// height: 60px;
-// angle: 0 deg;
-opacity: 1;
-font-weight: 700;
-font-style: Bold;
-font-size: 40px;
-leading-trim: NONE;
-line-height: 44px;
-letter-spacing: 0%;
-text-transform: capitalize;
-color: #FFFFFF;
-margin-bottom: 0px !important;
+  // height: 60px;
+  // angle: 0 deg;
+  opacity: 1;
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 40px;
+  leading-trim: NONE;
+  line-height: 44px;
+  letter-spacing: 0%;
+  text-transform: capitalize;
+  color: #FFFFFF;
+  margin-bottom: 0px !important;
 
 }
 
 .banner-description {
-font-weight: 500;
-font-style: Medium;
-font-size: 14px;
-leading-trim: NONE;
-line-height: 150%;
-letter-spacing: -1%;
-vertical-align: middle;
-font-variant-numeric-figure: lining-nums;
-font-variant-numeric-spacing: tabular-nums;
-color: #FFFFFF99;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 14px;
+  leading-trim: NONE;
+  line-height: 150%;
+  letter-spacing: -1%;
+  vertical-align: middle;
+  font-variant-numeric-figure: lining-nums;
+  font-variant-numeric-spacing: tabular-nums;
+  color: #FFFFFF99;
 
 }
 
 .banner-btn {
-//   margin-top: 20px;
-  padding: 10px 22px;
+  //   margin-top: 20px;
+  padding: 10px 18px;
   background: #fff;
   color: #12357B;
   border-radius: 100px;
   font-weight: 600;
   border: none;
   cursor: pointer;
+  font-size: 16px;
   width: 220px;
   height: 52px;
   box-sizing: border-box;
@@ -102,5 +104,3 @@ color: #FFFFFF99;
   border-radius: 60px;
   object-fit: cover;
 }
-
-
