@@ -50,13 +50,14 @@
             justify-content: center;
             align-items: center;
             background-color: #FFFFFF;
-            
+
             &__input {
                 padding: 10px;
                 font-size: 16px;
                 border: none;
-                border-radius: 4px 0 0 4px;
                 width: 350px;
+                outline: none;
+                border: none;
             }
 
             &__button {
