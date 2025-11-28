@@ -23,10 +23,9 @@
             flex-direction: column;
             gap: 20px;
             color: #ffffff;
-            font-family: 'Poppins', sans-serif;
-            font-weight: 500;
 
             .welcome-title {
+                font-size: 14px;
                 display: flex;
                 flex-direction: column;
                 gap: 16px;
@@ -39,8 +38,8 @@
 
                     >img {
                         vertical-align: middle;
-                        width: 15px;
-                        height: 15px;
+                        width: 12px;
+                        height: 12px;
                     }
                 }
 
